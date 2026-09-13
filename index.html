@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes, viewport-fit=cover">
+<title>Web design for construction companies | Quick and easy | BuildSite Media</title>
+<meta name="description" content="Web design for construction companies. Mobile-first sites, SEO, and a clear path for homeowners and GCs to reach you.">
+<meta name="google-site-verification" content="4w9ZUQ9l_Poi6S9DcU1sPxT_64jUNmpLix1RiyV_k28" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230d0d0d%22/><text x=%2250%22 y=%2268%22 font-size=%2260%22 text-anchor=%22middle%22 fill=%22%23f5c400%22 font-family=%22system-ui%22 font-weight=%22800%22>B</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#0d0d0d;
+    --black-strong:#000000;
+    --yellow:#f5c400;
+    --yellow-strong:#e0b100;
+    --yellow-dim:#fff3c4;
+    --white:#ffffff;
+    --bg:#fdfcf9;
+    --bg-alt:#f5f3ee;
+    --border:#e6e2d8;
+    --border-strong:#c9c3b3;
+    --fg:#171512;
+    --muted:#635e54;
+    --on-dark:#e9e6dd;
+    --on-dark-strong:#ffffff;
+    --on-dark-dim:#a9a396;
+    --shadow-lift: 0 18px 40px -18px rgb(0 0 0 / 0.35);
+    --radius:16px;
+  }
+  *{box-sizing:border-box;min-width:0}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--fg);
+    font-family:'Plus Jakarta Sans',system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces',serif;
+    margin:0;
+  }
+  p{margin:0}
+  a{color:inherit;text-decoration:none}
+  ul{list-style:none;margin:0;padding:0}
+  img{max-width:100%;display:block}
+  .container{max-width:1180px;margin:0 auto;padding:0 20px}
+  @media(min-width:1024px){.container{padding:0 48px}}
+  .accent-bar{display:block;height:5px;width:60px;border-radius:3px;background:var(--yellow)}
+  section{scroll-margin-top:88px}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(253,252,249,0.92);
+    backdrop-filter:blur(10px) saturate(150%);
+    border-bottom:1px solid var(--border);
+  }
+  .header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:72px;padding:12px 0}
+  .brand{display:block;padding:2px 0}
+  .brand-name{display:block;font-family:'Fraunces',serif;font-weight:600;font-size:1.2rem;letter-spacing:-0.01em;color:var(--fg)}
+  .brand-tag{display:block;margin-top:2px;font-size:0.66rem;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:var(--yellow-strong)}
+  nav.primary{display:none}
+  nav.primary ul{display:flex;gap:2px}
+  nav.primary a{padding:10px 14px;border-radius:999px;font-size:0.92rem;font-weight:600;color:var(--fg);opacity:0.72;transition:all .15s}
+  nav.primary a:hover{opacity:1;background:var(--bg-alt)}
+  .header-actions{display:flex;align-items:center;gap:8px}
+  .btn-cta{
+    display:none;align-items:center;gap:8px;white-space:nowrap;
+    border:1.5px solid var(--black);background:var(--black);color:var(--yellow);
+    padding:10px 20px;border-radius:999px;font-weight:700;font-size:0.9rem;
+    transition:all .15s;
+  }
+  .btn-cta:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgb(0 0 0 / 0.18);background:#1c1a17}
+  .menu-btn{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:44px;height:44px;border-radius:999px;border:1.5px solid var(--black);
+    background:var(--white);cursor:pointer;
+  }
+  @media(min-width:1024px){
+    nav.primary{display:flex;flex:1;justify-content:center}
+    .btn-cta{display:inline-flex}
+    .menu-btn{display:none}
+  }
+  .mobile-menu{
+    display:none;border-top:1px solid var(--border);background:var(--white);
+  }
+  .mobile-menu.open{display:block}
+  .mobile-menu ul{padding:8px 20px 16px;display:flex;flex-direction:column;gap:2px}
+  .mobile-menu a{display:block;padding:12px 6px;font-weight:600;border-bottom:1px solid var(--border)}
+
+  /* Hero */
+  .hero{position:relative;overflow:hidden;padding:48px 0 40px;background:var(--bg)}
+  .hero::before{
+    content:"";position:absolute;left:-10%;top:-20%;bottom:40%;right:40%;
+    background:radial-gradient(closest-side, rgb(245 196 0 / 0.18), transparent 70%);
+    pointer-events:none;
+  }
+  .hero-grid{position:relative;display:grid;gap:40px;align-items:start}
+  .hero h1{font-size:clamp(2.4rem,6vw,4.1rem);font-weight:500;line-height:1.02;letter-spacing:-0.03em;margin-top:18px}
+  .hero .lede{margin-top:22px;max-width:38ch;font-size:clamp(1.1rem,1.9vw,1.35rem);line-height:1.3;color:var(--fg);opacity:0.92}
+  .hero p.body{margin-top:16px;max-width:48ch;line-height:1.6;color:var(--muted)}
+  .stars{display:flex;align-items:center;gap:12px;margin-top:30px;padding-top:22px;border-top:1px solid var(--border)}
+  .stars svg{width:20px;height:20px;fill:var(--yellow);color:var(--yellow)}
+  .stars-row{display:flex;gap:2px}
+  .stars .label{color:var(--muted);font-size:1.02rem}
+
+  /* Quote card */
+  .quote-card{
+    position:relative;border-radius:18px;border:1px solid var(--border);border-top:4px solid var(--black);
+    background:var(--white);padding:26px;box-shadow:var(--shadow-lift);color:var(--fg);
+  }
+  .quote-card h2{font-size:1.35rem;font-weight:600}
+  form.quote-form{display:grid;gap:14px;margin-top:20px}
+  .field{display:grid;gap:6px}
+  .field label{font-size:0.9rem;font-weight:700;color:var(--fg);opacity:0.85}
+  .field label .req{color:#c0392b}
+  .field input,.field textarea{
+    width:100%;border:1px solid var(--border-strong);border-radius:10px;
+    padding:12px 14px;font-size:1rem;font-family:inherit;color:var(--fg);background:var(--white);
+    transition:all .15s;
+  }
+  .field textarea{resize:vertical;min-height:88px}
+  .field input:hover,.field textarea:hover{border-color:var(--black)}
+  .field input:focus,.field textarea:focus{outline:none;border-color:var(--yellow-strong);box-shadow:0 0 0 3px rgb(245 196 0 / 0.28)}
+  .btn-submit{
+    margin-top:2px;display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    background:var(--black);color:var(--yellow);border:none;border-radius:999px;
+    padding:16px 28px;font-size:0.98rem;font-weight:700;cursor:pointer;transition:all .15s;
+  }
+  .btn-submit:hover{transform:translateY(-2px);background:#1c1a17;box-shadow:var(--shadow-lift)}
+  .form-note{margin-top:12px;font-size:0.85rem;color:var(--muted);text-align:center}
+
+  @media(min-width:1024px){
+    .hero-grid{grid-template-columns:minmax(0,1fr) minmax(340px,25.5rem);gap:70px}
+  }
+
+  /* Two-col feature sections */
+  .feature{padding:40px 0 56px}
+  .feature.alt{background:var(--bg-alt)}
+  .feature-grid{display:grid;gap:32px;align-items:center}
+  .feature h2{margin-top:22px;font-size:clamp(1.75rem,3.2vw,2.7rem);font-weight:500;text-wrap:balance}
+  .feature p{margin-top:16px;max-width:44ch;font-size:clamp(1.02rem,1.5vw,1.15rem);line-height:1.6;color:var(--fg);opacity:0.85}
+  @media(min-width:1024px){
+    .feature-grid{grid-template-columns:1fr 1fr;gap:56px}
+    .feature-grid.reverse .art{order:2}
+  }
+  .art-wrap{max-width:26rem;margin:0 auto}
+  .art-card{
+    position:relative;border-radius:1.7rem;border:3px solid var(--black);background:var(--yellow-dim);
+    padding:12px;box-shadow:8px 10px 0 0 var(--black);
+  }
+  .art-caption{margin-top:8px;text-align:center;font-size:0.72rem;font-weight:600;color:var(--muted)}
+
+  /* Dark band */
+  .band{background:var(--black);color:var(--on-dark);padding:64px 0}
+  .band h2{color:var(--on-dark-strong);font-size:clamp(1.75rem,3.2vw,2.7rem);font-weight:500}
+  .band > .container{display:grid;gap:44px}
+  .band-grid{display:grid;gap:36px}
+  @media(min-width:1024px){
+    .band-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:56px;align-items:start}
+  }
+  .band p.lede{margin-top:14px;font-size:clamp(1.02rem,1.5vw,1.15rem);line-height:1.6;color:var(--on-dark)}
+  .cards2{display:grid;gap:18px}
+  @media(min-width:640px){.cards2{grid-template-columns:1fr 1fr}}
+  .card{background:rgba(255,255,255,0.97);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:22px}
+  .card h3{font-size:1.3rem;font-weight:600;color:var(--fg)}
+  .card ul{margin-top:16px;display:grid;gap:10px}
+  .card li{display:flex;gap:10px;font-size:0.95rem;line-height:1.5;color:var(--fg);opacity:0.88}
+  .card li svg{flex:none;width:16px;height:16px;margin-top:3px;color:var(--yellow-strong)}
+
+  /* Work */
+  .work{background:var(--bg);padding:56px 0}
+  .work h2{text-align:center;font-size:clamp(1.75rem,3.2vw,2.7rem);font-weight:500}
+  .work-scroll{margin-top:32px;overflow-x:auto;padding-bottom:8px}
+  .work-track{display:flex;gap:18px;width:max-content;margin:0 auto;padding:0 20px}
+  .work-item{width:min(82vw,26rem);flex:none}
+  @media(min-width:768px){.work-item{width:min(30vw,24rem)}}
+  .work-frame{
+    border:1px solid var(--border);border-radius:16px;overflow:hidden;background:var(--white);
+    box-shadow:0 2px 10px -4px rgb(0 0 0 / 0.08);
+  }
+  .work-shot{
+    aspect-ratio:16/10;background:
+      linear-gradient(135deg, var(--bg-alt) 25%, transparent 25%) -8px 0/16px 16px,
+      linear-gradient(225deg, var(--bg-alt) 25%, transparent 25%) -8px 0/16px 16px,
+      var(--white);
+    display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;color:var(--muted);
+  }
+  .work-shot .tag{
+    display:inline-block;background:var(--black);color:var(--yellow);font-size:0.72rem;font-weight:700;
+    padding:4px 10px;border-radius:999px;letter-spacing:0.03em;
+  }
+  .work-shot .name{font-family:'Fraunces',serif;font-size:1.15rem;color:var(--fg)}
+  .work-shot small{font-size:0.78rem}
+
+  /* Reviews */
+  .reviews{background:var(--black);color:var(--on-dark);padding:64px 0}
+  .reviews h2{text-align:center;color:var(--on-dark-strong);font-size:clamp(1.75rem,3.2vw,2.7rem);font-weight:500}
+  .review-grid{margin-top:36px;display:grid;gap:20px}
+  @media(min-width:768px){.review-grid{grid-template-columns:1fr 1fr}}
+  .review-card{
+    background:var(--white);color:var(--fg);border-radius:16px;padding:26px;
+    box-shadow:0 12px 32px -18px rgb(0 0 0 / 0.5);
+  }
+  .review-card .stars-row{color:var(--yellow-strong);font-size:1.1rem;letter-spacing:2px}
+  .review-card p{margin-top:14px;font-size:1.02rem;line-height:1.55}
+  .review-card .who{margin-top:16px;font-weight:700;font-size:0.9rem;color:var(--muted)}
+
+  /* Pricing */
+  .pricing{background:var(--bg);padding:64px 0}
+  .pricing h2{font-size:clamp(1.75rem,3.2vw,2.7rem);font-weight:500}
+  .pricing > .container > p{margin-top:16px;max-width:64ch;font-size:clamp(1.02rem,1.5vw,1.15rem);line-height:1.6;color:var(--fg);opacity:0.85}
+  .price-grid{margin-top:36px;display:grid;gap:18px}
+  @media(min-width:768px){.price-grid{grid-template-columns:repeat(3,1fr)}}
+  .price-card{
+    background:var(--white);border:1px solid var(--border);border-radius:16px;padding:26px;
+    transition:all .18s;
+  }
+  .price-card:hover{transform:translateY(-4px);border-color:var(--yellow-strong);box-shadow:var(--shadow-lift)}
+  .price-card h3{font-size:1.3rem;font-weight:600}
+  .price-card .amt{margin-top:10px;font-size:clamp(1.7rem,3vw,2.1rem);font-weight:800;letter-spacing:-0.01em;color:var(--fg)}
+  .price-card .amt span{color:var(--yellow-strong)}
+  .price-card p.desc{margin-top:12px;font-size:0.98rem;line-height:1.55;color:var(--muted)}
+  .addons{margin-top:28px;border-radius:16px;border:1px solid var(--black);background:var(--black);color:var(--on-dark);padding:28px}
+  .addons h3{color:var(--on-dark-strong);font-size:clamp(1.3rem,2.2vw,1.7rem);font-weight:600}
+  .addons > p{margin-top:10px;max-width:62ch;font-size:1.02rem;line-height:1.6;color:var(--on-dark)}
+  .addon-grid{margin-top:22px;display:grid;gap:16px}
+  @media(min-width:640px){.addon-grid{grid-template-columns:repeat(3,1fr)}}
+  .addon{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.14);border-radius:12px;padding:18px}
+  .addon .t{font-family:'Fraunces',serif;font-weight:600;color:var(--on-dark-strong);font-size:1.05rem}
+  .addon .p{margin-top:8px;font-size:1.15rem;font-weight:800;color:var(--yellow)}
+  .addon .d{margin-top:8px;font-size:0.9rem;line-height:1.5;color:var(--on-dark)}
+  .pricing-note{margin-top:22px;color:var(--muted);max-width:62ch}
+
+  /* About */
+  .about{background:var(--bg);padding:60px 0}
+  .about-inner{max-width:920px;margin:0 auto;display:flex;flex-direction:column;gap:36px;align-items:center}
+  @media(min-width:768px){.about-inner{flex-direction:row;align-items:flex-start;gap:48px}}
+  .about-avatar{
+    flex:none;width:150px;height:150px;border-radius:20px;border:3px solid var(--black);
+    background:linear-gradient(160deg,var(--yellow),var(--yellow-strong));
+    display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-lift);
+  }
+  .about-avatar svg{width:74px;height:74px;color:var(--black)}
+  .about h2{font-size:clamp(1.75rem,3.2vw,2.5rem);font-weight:500;letter-spacing:-0.01em}
+  .about .body-text{margin-top:18px;display:grid;gap:14px}
+  .about .body-text p{max-width:58ch;font-size:1.02rem;line-height:1.7;color:var(--fg);opacity:0.85}
+
+  /* FAQ */
+  .faq{background:var(--bg-alt);padding:64px 0}
+  .faq h2{font-size:clamp(1.75rem,3.2vw,2.7rem);font-weight:500}
+  .faq dl{margin-top:30px;display:grid;gap:0 64px}
+  @media(min-width:768px){.faq dl{grid-template-columns:1fr 1fr}}
+  .faq-item{border-top:1px solid var(--border-strong);padding:24px 0}
+  .faq-item dt{display:flex;gap:12px;font-size:1.03rem;font-weight:700}
+  .faq-item dt .dot{margin-top:7px;flex:none;width:10px;height:10px;border-radius:2px;background:var(--yellow-strong)}
+  .faq-item dd{margin:10px 0 0 22px;color:var(--muted);line-height:1.6}
+
+  /* Contact */
+  .contact{background:var(--black);color:var(--on-dark);padding:64px 0}
+  .contact-grid{display:grid;gap:44px}
+  @media(min-width:1024px){.contact-grid{grid-template-columns:minmax(0,1fr) minmax(340px,25.5rem);gap:70px}}
+  .contact p.lede{max-width:52ch;font-size:clamp(1.05rem,1.8vw,1.25rem);line-height:1.55;color:var(--on-dark)}
+  .contact p.lede + p.lede{margin-top:14px}
+  address{margin-top:38px;display:grid;gap:22px;font-style:normal}
+  .addr-row{display:flex;gap:14px}
+  .addr-row svg{flex:none;width:20px;height:20px;color:var(--yellow);margin-top:2px}
+  .addr-row .k{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:var(--on-dark-dim)}
+  .addr-row .v{margin-top:2px;font-size:1.05rem;color:var(--on-dark-strong)}
+  .addr-row a{border-bottom:1px solid rgb(245 196 0 / 0.45);padding-bottom:1px;transition:all .15s}
+  .addr-row a:hover{border-color:var(--yellow);color:var(--yellow)}
+  .contact .quote-card{border-top:4px solid var(--yellow)}
+
+  /* Footer */
+  footer{background:var(--black-strong);color:rgba(255,255,255,0.65)}
+  .footer-inner{padding:48px 0}
+  .footer-grid{display:grid;gap:40px}
+  @media(min-width:768px){.footer-grid{grid-template-columns:1.4fr 1fr}}
+  .footer-brand p:first-child{font-family:'Fraunces',serif;font-size:1.25rem;font-weight:600;color:#fff}
+  .footer-brand .tag{margin-top:4px;font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.16em;color:var(--yellow)}
+  .footer-brand address{margin-top:20px;display:flex;flex-direction:column;gap:8px;font-size:0.9rem}
+  .footer-brand a{display:inline-flex;align-items:center;gap:8px;width:fit-content;transition:color .15s}
+  .footer-brand a:hover{color:var(--yellow)}
+  .footer-nav h2{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:rgba(255,255,255,0.5)}
+  .footer-nav ul{margin-top:16px;display:grid;gap:10px}
+  .footer-nav a{font-size:0.9rem;transition:color .15s}
+  .footer-nav a:hover{color:var(--yellow)}
+  .footer-bottom{margin-top:44px;border-top:1px solid rgba(255,255,255,0.15);padding-top:22px;font-size:0.78rem}
+
+  /* Scroll-triggered sticky CTA */
+  .sticky-cta{
+    position:fixed;left:0;right:0;bottom:0;z-index:40;padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));
+    pointer-events:none;opacity:0;transform:translateY(16px);transition:opacity .25s ease,transform .25s ease;
+  }
+  .sticky-cta.visible{opacity:1;transform:translateY(0);pointer-events:auto}
+  .sticky-cta a{
+    pointer-events:auto;display:flex;align-items:center;justify-content:center;gap:10px;min-height:48px;
+    border:1px solid var(--black);background:var(--yellow);color:var(--black);border-radius:999px;
+    font-weight:700;font-size:0.95rem;box-shadow:var(--shadow-lift);
+  }
+  @media(min-width:1024px){.sticky-cta{display:none}}
+  body{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+  @media(min-width:1024px){body{padding-bottom:0}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <a class="brand" href="#top">
+      <span class="brand-name">BuildSite Media</span>
+      <span class="brand-tag">web design for construction companies</span>
+    </a>
+    <nav class="primary" aria-label="Primary">
+      <ul>
+        <li><a href="#websites">Websites</a></li>
+        <li><a href="#seo">SEO</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a class="btn-cta" href="#quote">Get a quote</a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#websites">Websites</a></li>
+      <li><a href="#seo">SEO</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#quote">Get a quote</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="accent-bar" aria-hidden="true"></span>
+        <h1>Web design for construction companies</h1>
+        <p class="lede">We build websites for general contractors, remodelers, and builders.</p>
+        <p class="body">Competition is picking up in construction. It is more important to rank organically than ever before.</p>
+        <p class="body">Whether you need a small website or you want to go big, we are the go-to place.</p>
+        <p class="body">We make it quick and easy so you can focus on your jobsites. We take care of the build.</p>
+        <p class="body">The sites are mobile-first and ADA compliant, with an easy path for homeowners and GCs to get in contact with you.</p>
+        <div class="stars">
+          <span class="stars-row" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
+          </span>
+          <span class="label">5-star reviews from the businesses we build for</span>
+        </div>
+      </div>
+
+      <div class="quote-card" id="quote">
+        <h2>Tell us about your construction company</h2>
+        <form class="quote-form" data-form name="contact-request" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contact-request">
+          <p style="position:absolute;left:-9999px" aria-hidden="true"><label>Leave this field blank<input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+          <div class="field">
+            <label for="q-name">Name<span class="req"> *</span></label>
+            <input id="q-name" type="text" required autocomplete="name" name="name">
+          </div>
+          <div class="field">
+            <label for="q-email">Email<span class="req"> *</span></label>
+            <input id="q-email" type="email" required autocomplete="email" name="email">
+          </div>
+          <div class="field">
+            <label for="q-phone">Phone<span class="req"> *</span></label>
+            <input id="q-phone" type="tel" required autocomplete="tel" name="phone">
+          </div>
+          <div class="field">
+            <label for="q-message">What do you need? <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+            <textarea id="q-message" name="message" rows="3" maxlength="5000"></textarea>
+          </div>
+          <button type="submit" class="btn-submit">
+            Get a quote
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </button>
+          <p class="form-note" data-note style="display:none"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- WEBSITES -->
+  <section id="websites" class="feature alt">
+    <div class="container feature-grid">
+      <div class="art">
+        <div class="art-wrap">
+          <div class="art-card">
+            <svg viewBox="0 0 360 300" role="img" aria-label="Illustration of a construction worker building a website">
+              <rect x="16" y="248" width="328" height="18" rx="4" fill="#efece3" stroke="#0d0d0d" stroke-width="3"/>
+              <!-- monitor stand -->
+              <line x1="210" y1="16" x2="210" y2="52" stroke="#0d0d0d" stroke-width="4" stroke-linecap="round"/>
+              <rect x="200" y="50" width="20" height="16" rx="3" fill="#8b8577" stroke="#0d0d0d" stroke-width="2.5"/>
+              <path d="M186 66 Q210 118 234 66 Z" fill="#f5c400" stroke="#0d0d0d" stroke-width="3" stroke-linejoin="round"/>
+              <rect x="200" y="112" width="20" height="10" rx="2" fill="#cfc9ba" stroke="#0d0d0d" stroke-width="2.5"/>
+              <!-- laptop / site being built -->
+              <rect x="148" y="138" width="124" height="92" rx="8" fill="#0d0d0d"/>
+              <rect x="156" y="146" width="108" height="76" rx="4" fill="#fdfcf9"/>
+              <rect x="164" y="154" width="40" height="8" rx="2" fill="#f5c400"/>
+              <rect x="164" y="168" width="92" height="6" rx="2" fill="#dcd6c8"/>
+              <rect x="164" y="180" width="70" height="6" rx="2" fill="#dcd6c8"/>
+              <rect x="164" y="196" width="30" height="14" rx="3" fill="#0d0d0d"/>
+              <rect x="200" y="196" width="30" height="14" rx="3" fill="#efece3"/>
+              <rect x="162" y="230" width="96" height="12" rx="3" fill="#6b6558" stroke="#0d0d0d" stroke-width="2.5"/>
+              <!-- worker -->
+              <ellipse cx="58" cy="196" rx="26" ry="32" fill="#0d0d0d"/>
+              <rect x="46" y="174" width="24" height="14" rx="2" fill="#f5c400"/>
+              <circle cx="58" cy="146" r="22" fill="#f2c9a0" stroke="#0d0d0d" stroke-width="3"/>
+              <path d="M32 140 Q58 108 84 140 L84 148 L32 148 Z" fill="#f5c400" stroke="#0d0d0d" stroke-width="3" stroke-linejoin="round"/>
+              <circle cx="50" cy="150" r="2.5" fill="#0d0d0d"/>
+              <circle cx="66" cy="150" r="2.5" fill="#0d0d0d"/>
+              <path d="M50 160 Q58 166 66 160" fill="none" stroke="#0d0d0d" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M38 184 Q30 204 34 222" fill="none" stroke="#f2c9a0" stroke-width="10" stroke-linecap="round"/>
+              <path d="M80 184 Q112 192 140 210" fill="none" stroke="#f2c9a0" stroke-width="10" stroke-linecap="round"/>
+              <!-- speech bubble -->
+              <rect x="16" y="16" width="150" height="36" rx="12" fill="#fff" stroke="#0d0d0d" stroke-width="3"/>
+              <path d="M48 52 L40 66 L60 52 Z" fill="#fff" stroke="#0d0d0d" stroke-width="3"/>
+              <text x="91" y="39" text-anchor="middle" fill="#0d0d0d" font-size="12" font-weight="700" font-family="system-ui,sans-serif">Building your site…</text>
+            </svg>
+          </div>
+          <p class="art-caption">Mobile-first sites built for jobsite-to-office teams</p>
+        </div>
+      </div>
+      <div>
+        <span class="accent-bar" aria-hidden="true"></span>
+        <h2>Website design for the modern construction company</h2>
+        <p>Whether you want a one-page website for $499, or more pages to target more keywords because you are looking to grow, we approach it the same way.</p>
+        <p>Mobile-first. Fast and clean. A clear path to the quote form so homeowners and GCs can reach you when there is a project to bid.</p>
+        <p>The site is secure and meets ADA compliance. We build in technical SEO from day one. Hosting and maintenance are optional.</p>
+        <p>We build this in the US. We do not outsource it for cheaper labor. You work with the person who is building your site.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEO -->
+  <section id="seo" class="feature">
+    <div class="container feature-grid reverse">
+      <div>
+        <span class="accent-bar" aria-hidden="true"></span>
+        <h2>Search engine optimization (SEO)</h2>
+        <p>When someone needs a remodel, an addition, or a new build, they search general contractor and their town. When it's storm damage or a repair, they search that too.</p>
+        <p>SEO is the monthly work after the site is live. The point is those searches reach you, not the next crew.</p>
+        <p>Bid-ready jobs and urgent repairs do not use the same words. We put the quote form front and center on the urgent searches. We give remodels, additions, and new builds their own pages.</p>
+        <p>Each month we look at what is bringing jobs and what is not. Sometimes that means rewriting a page. Sometimes it means adding one.</p>
+        <p>We do not promise first place. We keep working the searches that turn into work.</p>
+      </div>
+      <div class="art">
+        <div class="art-wrap">
+          <div class="art-card">
+            <svg viewBox="0 0 360 300" role="img" aria-label="Illustration of a construction worker reviewing a blueprint with a magnifying glass ranking number one on a search result">
+              <rect x="16" y="248" width="328" height="18" rx="4" fill="#efece3" stroke="#0d0d0d" stroke-width="3"/>
+              <!-- blueprint board -->
+              <rect x="120" y="70" width="210" height="160" fill="#0d0d0d" stroke="#0d0d0d" stroke-width="3"/>
+              <rect x="130" y="80" width="190" height="140" fill="#12305c"/>
+              <g stroke="#3f5f8f" stroke-width="1">
+                <line x1="150" y1="80" x2="150" y2="220"/><line x1="180" y1="80" x2="180" y2="220"/>
+                <line x1="210" y1="80" x2="210" y2="220"/><line x1="240" y1="80" x2="240" y2="220"/>
+                <line x1="270" y1="80" x2="270" y2="220"/><line x1="300" y1="80" x2="300" y2="220"/>
+                <line x1="130" y1="100" x2="320" y2="100"/><line x1="130" y1="130" x2="320" y2="130"/>
+                <line x1="130" y1="160" x2="320" y2="160"/><line x1="130" y1="190" x2="320" y2="190"/>
+              </g>
+              <rect x="160" y="140" width="70" height="50" fill="none" stroke="#f5c400" stroke-width="3"/>
+              <rect x="250" y="110" width="40" height="80" fill="none" stroke="#f5c400" stroke-width="3"/>
+              <!-- search result card -->
+              <g>
+                <rect x="30" y="30" width="150" height="90" rx="10" fill="#fff" stroke="#0d0d0d" stroke-width="3"/>
+                <rect x="40" y="40" width="130" height="16" rx="8" fill="#f0eee6" stroke="#0d0d0d" stroke-width="2"/>
+                <circle cx="51" cy="48" r="4" fill="none" stroke="#635e54" stroke-width="2"/>
+                <text x="62" y="52" font-size="8" font-family="system-ui,sans-serif" fill="#635e54">general contractor near me</text>
+                <rect x="40" y="65" width="20" height="20" rx="4" fill="#f5c400" stroke="#0d0d0d" stroke-width="2"/>
+                <text x="50" y="79" text-anchor="middle" font-size="11" font-weight="800" font-family="system-ui,sans-serif" fill="#0d0d0d">1</text>
+                <text x="66" y="74" font-size="10" font-weight="700" font-family="system-ui,sans-serif" fill="#0d0d0d">Your Construction Co</text>
+                <text x="66" y="86" font-size="7.5" font-family="system-ui,sans-serif" fill="#5c7d3f">yourcompany.com</text>
+              </g>
+              <!-- worker with magnifier -->
+              <ellipse cx="70" cy="220" rx="26" ry="32" fill="#0d0d0d"/>
+              <rect x="58" y="198" width="24" height="14" rx="2" fill="#f5c400"/>
+              <circle cx="70" cy="170" r="22" fill="#f2c9a0" stroke="#0d0d0d" stroke-width="3"/>
+              <path d="M44 164 Q70 132 96 164 L96 172 L44 172 Z" fill="#f5c400" stroke="#0d0d0d" stroke-width="3" stroke-linejoin="round"/>
+              <circle cx="62" cy="174" r="2.5" fill="#0d0d0d"/>
+              <circle cx="78" cy="174" r="2.5" fill="#0d0d0d"/>
+              <path d="M62 186 Q70 192 78 186" fill="none" stroke="#0d0d0d" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M92 210 Q112 196 126 182" fill="none" stroke="#f2c9a0" stroke-width="10" stroke-linecap="round"/>
+              <circle cx="138" cy="172" r="14" fill="none" stroke="#0d0d0d" stroke-width="5"/>
+              <line x1="148" y1="182" x2="160" y2="194" stroke="#0d0d0d" stroke-width="6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <p class="art-caption">Ranking for the searches that turn into bids and jobs</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DARK: what it must do -->
+  <section class="band">
+    <div class="container band-grid">
+      <div>
+        <h2>What a construction website actually has to do</h2>
+        <p class="lede">What we do and build into your site.</p>
+      </div>
+      <div class="cards2">
+        <article class="card">
+          <h3>Website</h3>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Custom build</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Mobile-first</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>ADA compliant</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Easy to use (clear path to the form)</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Built for peace of mind</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Fast load times</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>And much more</span></li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>SEO</h3>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Research to understand your market</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Technical SEO</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>On-page SEO</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Off-page SEO</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>And much more</span></li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section id="work" class="work">
+    <div class="container"><h2>Construction company sites we have built</h2></div>
+    <div class="work-scroll">
+      <div class="work-track">
+        <div class="work-item">
+          <div class="work-frame">
+            <div class="work-shot">
+              <span class="tag">Add screenshot</span>
+              <span class="name">Sample Project — Home Remodel Co.</span>
+              <small>Drop a screenshot of a live build here</small>
+            </div>
+          </div>
+        </div>
+        <div class="work-item">
+          <div class="work-frame">
+            <div class="work-shot">
+              <span class="tag">Add screenshot</span>
+              <span class="name">Sample Project — Site Builders Inc.</span>
+              <small>Drop a screenshot of a live build here</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews" class="reviews">
+    <div class="container">
+      <h2>What business owners say about working with us</h2>
+      <div class="review-grid">
+        <figure class="review-card">
+          <span class="stars-row" aria-hidden="true">★★★★★</span>
+          <p>"Fast turnaround and they actually understood what a contractor needs on a site — clear pricing, easy to update, and more quote requests come in."</p>
+          <p class="who">— Add a client quote here</p>
+        </figure>
+        <figure class="review-card">
+          <span class="stars-row" aria-hidden="true">★★★★★</span>
+          <p>"Straightforward process from start to finish. No fluff, no jargon, just a site that works and ranks."</p>
+          <p class="who">— Add a client quote here</p>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="pricing">
+    <div class="container">
+      <h2>What a construction website costs</h2>
+      <p>Easy to follow build prices. Hosting, SEO, and Google Business Profile work are available on top when you want them.</p>
+      <div class="price-grid">
+        <article class="price-card">
+          <h3>Single-page website</h3>
+          <p class="amt">Starts at <span>$499</span></p>
+          <p class="desc">A clean one-page site so homeowners and GCs can find you, see your licensing and insurance, and fill out the form when there is a job to bid.</p>
+        </article>
+        <article class="price-card">
+          <h3>Six-page website</h3>
+          <p class="amt"><span>$999</span></p>
+          <p class="desc">Room for services, remodels, new builds, additions, about, and contact so shopped jobs have a clear place to land.</p>
+        </article>
+        <article class="price-card">
+          <h3>Custom scope</h3>
+          <p class="amt"><span>Quote on request</span></p>
+          <p class="desc">For larger construction website design work when you need more pages or a broader service area.</p>
+        </article>
+      </div>
+
+      <div class="addons">
+        <h3>Add-ons when you want them</h3>
+        <p>Hosting, SEO, and Google Business Profile work sit on top of the build, only if you want them.</p>
+        <div class="addon-grid">
+          <div class="addon">
+            <p class="t">Google Business Profile</p>
+            <p class="p">$250 one-time</p>
+            <p class="d">We set up and clean up your profile so local homeowners and GCs can find you on Google Maps. No monthly fee.</p>
+          </div>
+          <div class="addon">
+            <p class="t">SEO</p>
+            <p class="p">$599/mo</p>
+            <p class="d">Monthly on-page work: new pages and rewrites on what is already live, whichever is the bottleneck. Month to month. Off-page work is scoped separately.</p>
+          </div>
+          <div class="addon">
+            <p class="t">Hosting and maintenance</p>
+            <p class="p">From $35/mo</p>
+            <p class="d">From $35/mo, or from $75/mo if the site needs a database. Optional. If you'd rather pay the host yourself, we can help you get the accounts set up. You keep the code and every login.</p>
+          </div>
+        </div>
+      </div>
+      <p class="pricing-note">Tell us what you need and we will put a fixed price and a launch date on it.</p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="about-inner">
+        <div class="about-avatar" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <div>
+          <h2>A little bit more about us</h2>
+          <div class="body-text">
+            <p>We are a small team that loves helping construction companies with their digital presence.</p>
+            <p>We started small, and have since learned that we enjoy this work enough that we've made it our full-time job.</p>
+            <p>We understand the hard work it takes to run a construction business. We know that most owners, if they can find someone they trust who does a good job, would rather just have someone else handle their online presence — it's hard to keep up with everything, especially with Google constantly changing.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="faq">
+    <div class="container">
+      <h2>Questions we get asked</h2>
+      <dl>
+        <div class="faq-item">
+          <dt><span class="dot" aria-hidden="true"></span>How fast can a construction website go live?</dt>
+          <dd>A one-page site usually takes 7 to 10 days. A six-page site or larger usually takes 10 to 21 days, depending on how quick the content and photos come in.</dd>
+        </div>
+        <div class="faq-item">
+          <dt><span class="dot" aria-hidden="true"></span>Is $499 really the starting price?</dt>
+          <dd>Yes. A single-page website starts at $499. A six-page website is $999. Anything larger is a custom quote.</dd>
+        </div>
+        <div class="faq-item">
+          <dt><span class="dot" aria-hidden="true"></span>Are we locked into a contract?</dt>
+          <dd>No. There is no contract. You get the code and every login, and you can host the site elsewhere if you ever want to.</dd>
+        </div>
+        <div class="faq-item">
+          <dt><span class="dot" aria-hidden="true"></span>Will our site rank on Google?</dt>
+          <dd>We build technical SEO into the site from day one and can keep working on SEO after launch. We do not promise rankings, because Google changes and every market is different.</dd>
+        </div>
+        <div class="faq-item">
+          <dt><span class="dot" aria-hidden="true"></span>Can the site show that we are licensed and insured?</dt>
+          <dd>Yes. Homeowners and GCs look for that. We can put your license, bonding, and insurance information, service area, and a clear path to the quote form right where people expect to find it.</dd>
+        </div>
+        <div class="faq-item">
+          <dt><span class="dot" aria-hidden="true"></span>How do you handle urgent repairs versus bid jobs?</dt>
+          <dd>Construction has two kinds of buyers: the urgent repair and the bid job like remodels, additions, and new builds. We design the site so both can find what they need, with a clear path to the form for urgent work and room for the shopped jobs where the money is.</dd>
+        </div>
+        <div class="faq-item">
+          <dt><span class="dot" aria-hidden="true"></span>Do you build for general contractors who run multiple trades?</dt>
+          <dd>Yes. Many of the construction companies we build for run several trades under one roof. We can structure the site so each service is easy to find without confusing the visitor.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="container contact-grid">
+      <div>
+        <p class="lede">We would love to see if we are a good fit for your business, and see if we can help you take it to the next level.</p>
+        <p class="lede">If you are intrigued and would like to learn more, reach out to us and let's see if we are a good fit.</p>
+        <address>
+          <div class="addr-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <p class="k">Based in</p>
+              <p class="v">Buffalo, New York</p>
+            </div>
+          </div>
+        </address>
+      </div>
+      <div class="quote-card" id="start">
+        <h2>Tell us about your construction company</h2>
+        <form class="quote-form" data-form name="contact-request" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contact-request">
+          <p style="position:absolute;left:-9999px" aria-hidden="true"><label>Leave this field blank<input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+          <div class="field">
+            <label for="s-name">Name<span class="req"> *</span></label>
+            <input id="s-name" type="text" required autocomplete="name" name="name">
+          </div>
+          <div class="field">
+            <label for="s-email">Email<span class="req"> *</span></label>
+            <input id="s-email" type="email" required autocomplete="email" name="email">
+          </div>
+          <div class="field">
+            <label for="s-phone">Phone<span class="req"> *</span></label>
+            <input id="s-phone" type="tel" required autocomplete="tel" name="phone">
+          </div>
+          <div class="field">
+            <label for="s-message">What do you need? <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+            <textarea id="s-message" name="message" rows="3" maxlength="5000"></textarea>
+          </div>
+          <button type="submit" class="btn-submit">
+            Get a quote
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </button>
+          <p class="form-note" data-note style="display:none"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p>BuildSite Media</p>
+        <p class="tag">web design for construction companies</p>
+        <address>
+          <span>Buffalo, New York</span>
+        </address>
+      </div>
+      <nav class="footer-nav" aria-label="Sitemap">
+        <h2>Sitemap</h2>
+        <ul>
+          <li><a href="#top">Home</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-bottom">© 2026 BuildSite Media</div>
+  </div>
+</footer>
+
+<div class="sticky-cta" id="stickyCta">
+  <a href="#quote">
+    Get your website
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+  </a>
+</div>
+
+<script>
+  var menuBtn = document.getElementById('menuBtn');
+  var mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', function(){
+    var open = mobileMenu.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  mobileMenu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      mobileMenu.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  function encodeFormData(form){
+    return new URLSearchParams(new FormData(form)).toString();
+  }
+
+  document.querySelectorAll('[data-form]').forEach(function(form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var note = form.querySelector('[data-note]');
+      var submitBtn = form.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      fetch('/', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        body: encodeFormData(form)
+      }).then(function(){
+        note.textContent = "Thanks — we'll be in touch shortly.";
+        note.style.display = 'block';
+        form.reset();
+      }).catch(function(){
+        note.textContent = "Something went wrong sending that — please try again in a moment.";
+        note.style.display = 'block';
+      }).finally(function(){
+        submitBtn.disabled = false;
+      });
+    });
+  });
+
+  var stickyCta = document.getElementById('stickyCta');
+  function updateStickyCta(){
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    var scrolled = docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0;
+    stickyCta.classList.toggle('visible', scrolled >= 10);
+  }
+  window.addEventListener('scroll', updateStickyCta, {passive:true});
+  window.addEventListener('resize', updateStickyCta);
+  updateStickyCta();
+</script>
+
+</body>
+</html>
