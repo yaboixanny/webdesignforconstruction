@@ -348,6 +348,14 @@
   .post-body section+section{margin-top:34px}.post-body h2{font-size:clamp(1.45rem,2.4vw,2rem);line-height:1.2}.post-body p{margin-top:14px;font-size:1.04rem;line-height:1.8;color:var(--fg)}
   .post-body a{color:#654d00;text-decoration:underline;text-underline-offset:3px}.post-next{margin-top:42px;padding:24px;border-left:5px solid var(--yellow);background:var(--bg-alt);border-radius:0 12px 12px 0}.post-next p:first-child{margin-top:0}
   .resources{padding:70px 0;background:var(--bg-alt)}.resources h2{font-size:clamp(1.8rem,3vw,2.7rem);font-weight:500}.resources>div>p{margin-top:12px;line-height:1.6;color:var(--muted)}.resource-grid{display:grid;gap:14px;margin:26px 0 0;padding:0;list-style:none}@media(min-width:700px){.resource-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}.resource-grid a{height:100%;display:flex;flex-direction:column;gap:10px;padding:22px;border:1px solid var(--border);border-radius:15px;background:var(--white);text-decoration:none;color:var(--fg)}.resource-grid a:hover,.resource-grid a:focus-visible{border-color:var(--yellow-strong);box-shadow:var(--shadow-lift)}.resource-grid strong{font-family:'Fraunces',serif;font-size:1.1rem;line-height:1.35}.resource-grid span{margin-top:auto;color:#705600;font-size:.85rem;font-weight:700}
+
+  .article-toc{margin:0 0 48px;padding:26px 28px;background:var(--black);color:var(--on-dark);border-radius:18px}
+  .article-toc h2{font-size:1.2rem;color:white}.article-toc ol{list-style:none;counter-reset:toc;margin:18px 0 0;padding:0;display:grid;gap:11px}
+  @media(min-width:700px){.article-toc ol{grid-template-columns:1fr 1fr;column-gap:24px}}
+  .article-toc li{counter-increment:toc;display:flex;gap:10px;line-height:1.45}.article-toc li::before{content:counter(toc,decimal-leading-zero);font-size:.75rem;font-weight:800;color:var(--yellow);padding-top:3px}.article-toc a{color:var(--on-dark);text-decoration:none}.article-toc a:hover,.article-toc a:focus-visible{color:var(--yellow);text-decoration:underline}
+  .post-body .article-section{scroll-margin-top:100px;padding-top:8px}.article-section h2{display:flex;align-items:baseline;gap:14px}.article-section h2 span{color:#8a6c00;font-family:system-ui,sans-serif;font-size:.8rem;font-weight:800}
+  .article-note{margin:30px 0;padding:24px 26px;border-radius:14px;background:#fff3c4;border:1px solid #e9d780}.article-note strong{display:block;font-size:.78rem;letter-spacing:.09em;text-transform:uppercase}.post-body .article-note p{margin-top:8px}
+  .article-checklist{margin:38px 0;padding:27px;border:1px solid var(--border);border-radius:16px;background:var(--white)}.article-checklist h2{font-size:1.4rem}.article-checklist ul{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:12px}.article-checklist li{display:flex;gap:12px;line-height:1.6}.article-checklist li::before{content:"✓";flex:none;color:#806500;font-weight:800}
 </style>
 </head>
 <body>
@@ -394,12 +402,56 @@
   <article>
     <div class="post-hero"><div class="post-wrap"><p class="post-kicker">Construction website resources</p><h1>What pages should a construction company website have?</h1><p class="post-intro">A construction website does not need dozens of pages to be useful. It needs the right information in the right places, so a homeowner, general contractor, or project owner can decide whether your company is a fit and know how to reach you.</p><p class="post-meta">By BuildSite Media · October 31, 2026</p></div></div>
     <div class="post-body"><div class="post-wrap">
-      <section><h2>Start with a clear homepage</h2><p>Your homepage should explain what you build, who you work for, and where you work. Put your primary services and a clear contact option near the top. A visitor should not need to inspect the whole site to figure out whether you handle their kind of project.</p></section>
-      <section><h2>Give important services room to breathe</h2><p>A general contractor might group additions, renovations, and new builds separately. A roofing company might distinguish leak repair from replacement. A dedicated page is useful when the service has a different buyer, process, or set of questions; a short services section may be enough when the scope is small.</p></section>
-      <section><h2>Show relevant projects and qualifications</h2><p>Use real photographs and accurate descriptions of work your company performed, with permission to publish. Explain the project type and your role. Your about page can introduce your team and approach, while current licensing, bonding, and insurance details can help buyers assess your qualifications.</p></section>
-      <section><h2>Make contact easy on every device</h2><p>A contact page should include a working form, current contact details, and the areas you actually serve. Ask only for information your team will use, such as location, project type, and a short description. Test the form on a phone and make sure an inquiry reaches the right person.</p></section>
-      <section><h2>Add pages when they answer a real question</h2><p>FAQs, a process page, or location information can help when customers regularly need those details. Avoid publishing near-identical town pages just to fill a menu. Start with a structure your team can maintain, then add depth as your services and customers require it.</p></section>
-      <aside class="post-next"><p>Need help putting these ideas to work? Explore our <a href="/">web design for construction companies</a> and tell us about your business.</p><p>Clear service descriptions and project stories are easier to maintain when the writing has a consistent purpose; learn more about our <a href="/copywriting-for-construction-websites/">construction website copywriting</a>.</p></aside>
+      <nav class="article-toc" aria-label="Article contents">
+        <h2>What to include</h2>
+        <ol>
+          <li><a href="#homepage">Homepage</a></li><li><a href="#services">Service pages</a></li>
+          <li><a href="#projects">Projects and portfolio</a></li><li><a href="#about-company">About your company</a></li>
+          <li><a href="#contact-page">Contact and quote request</a></li><li><a href="#service-area">Service area</a></li>
+          <li><a href="#helpful-extras">Helpful extra pages</a></li><li><a href="#one-page">Choosing the right size</a></li>
+        </ol>
+      </nav>
+      <section class="article-section" id="homepage"><h2><span>01</span>Homepage: make the work clear</h2>
+        <p>Your homepage is the front door. In a few seconds, a visitor should understand what you do, who you work for, and where you work. A headline such as “Residential remodeling in the greater Dayton area” gives a homeowner more to go on than a general promise of quality. Adapt the message to your actual trade and location.</p>
+        <p>Follow that introduction with a short overview of your main services, a few genuine project photographs if you have permission to use them, and a clear path to contact you. Someone ready to request a quote should not have to hunt through the menu. A commercial buyer who is still evaluating firms should be able to continue to your capabilities and project information.</p>
+      </section>
+      <section class="article-section" id="services"><h2><span>02</span>Service pages: answer the job-specific questions</h2>
+        <p>A services page explains the work your crew actually takes on. Start with your most important offerings and describe what each involves, who it is for, and how a customer starts. A general contractor might explain additions, new construction, and renovations; a concrete contractor might distinguish driveways, slabs, and foundations.</p>
+        <p>A separate page makes sense when a service has its own customers, process, and common questions. Roof repair and roof replacement, for example, often require different information. If your business offers only a few closely related services, a well-organized single services page can be enough. Avoid making a separate page just to repeat the same paragraph with another keyword.</p>
+      </section>
+      <aside class="article-note"><strong>A useful test</strong><p>For every proposed page, ask: “What question does this answer that another page does not?” If you cannot name one, the information may belong on an existing page.</p></aside>
+      <section class="article-section" id="projects"><h2><span>03</span>Projects: show the work behind the claim</h2>
+        <p>Customers want to see work like the project they are planning. With the owner’s permission, include photographs of completed jobs and a short description of the property type, project scope, and your company’s role. A remodeling company can show a kitchen before and after construction; a commercial contractor can describe its role in a tenant improvement without revealing confidential details.</p>
+        <p>Use projects your business actually completed and identify any limits on what you can share. A few well-explained examples are more useful than a large gallery with no context. If you are a new company without publishable project photos, explain your experience and process accurately instead of using stock images as if they were your work.</p>
+      </section>
+      <section class="article-section" id="about-company"><h2><span>04</span>About: help people understand your company</h2>
+        <p>Your about page can introduce the people behind the business, the kinds of projects you take on, and how you approach communication and scheduling. A homeowner may want to know who will be involved in a renovation; an owner or general contractor may be looking for a clear explanation of your role and capabilities.</p>
+        <p>Include current licensing, bonding, insurance, or other qualifications where relevant and accurate. Keep those details updated, and avoid claims you cannot substantiate. If you publish customer feedback, use real reviews with permission and identify the source truthfully.</p>
+      </section>
+      <section class="article-section" id="contact-page"><h2><span>05</span>Contact: make the next step easy</h2>
+        <p>Your contact page should make it simple to reach the right person. Show current contact details and explain what happens after someone gets in touch. A quote form can ask for the visitor’s name, contact information, project location, and a brief description. Ask for more only when the answer will help your team respond.</p>
+        <p>Check the whole process on a phone: open the form, submit a test using your own details, and confirm the message arrives where someone will see it. If you want plans or photographs but your form cannot accept attachments, provide a real alternative rather than asking visitors to upload files that cannot be sent.</p>
+      </section>
+      <section class="article-section" id="service-area"><h2><span>06</span>Service area: be specific and honest</h2>
+        <p>Tell customers where you actually work. A service-area section or page can list the regions you serve and explain any limitations that matter, such as project size or type. This helps someone decide whether it is worth contacting you and can reduce inquiries from outside your coverage area.</p>
+        <p>A separate location page is useful when it adds genuinely different information, such as relevant services or projects in that area. Creating dozens of nearly identical pages that only swap the town name makes the website harder to maintain and gives visitors little extra help.</p>
+      </section>
+      <section class="article-section" id="helpful-extras"><h2><span>07</span>Extra pages: add them for a reason</h2>
+        <p>A process page can explain how an inquiry becomes an estimate and what happens during planning and construction. An FAQ can answer questions your team hears repeatedly, such as whether you take on occupied-home renovations or how a general contractor should invite a bid. A capabilities page may be useful when your customers are commercial owners, architects, or procurement teams.</p>
+        <p>Resources or blog posts can also answer questions before someone is ready to hire. Keep the advice relevant to your work and link to a useful next step. Our <a href="/construction-website-seo-checklist/">construction website SEO checklist</a> covers ways to organize and connect those pages.</p>
+      </section>
+      <section class="article-section" id="one-page"><h2><span>08</span>One page or a larger website?</h2>
+        <p>A one-page site can work for a focused business that needs to introduce its services and provide a way to get in touch. It can include short sections for the company, work, service area, and contact form. The priority is that each section is easy to find and use, especially on a phone.</p>
+        <p>A larger site gives distinct services, project examples, and customer questions more room. It may be a better fit when you serve different audiences or need to explain several kinds of work. Choose the structure around the information customers need and what your team can keep accurate, then expand as the business grows.</p>
+      </section>
+      <aside class="article-checklist"><h2>A quick pre-launch checklist</h2><ul>
+        <li>Can a first-time visitor identify your services and service area?</li>
+        <li>Are the photos, credentials, and project descriptions accurate and approved for use?</li>
+        <li>Does the contact form work, and does an actual person receive the message?</li>
+        <li>Can customers navigate the pages and reach you easily on a phone?</li>
+        <li>Does each additional page provide useful information of its own?</li>
+      </ul></aside>
+      <aside class="post-next"><p>Need help choosing the right structure? Explore our <a href="/">web design for construction companies</a> and tell us about your business.</p><p>For help explaining your services and projects, see our <a href="/copywriting-for-construction-websites/">construction website copywriting</a> service.</p></aside>
     </div></div>
   </article>
   <!-- CONTACT -->
@@ -469,7 +521,7 @@
         <ul>
           <li><a href="/">Home</a></li>
           <li><a href="/#pricing">Pricing</a></li>
-          <li><a href="/#resources">Blog</a></li>
+          <li><a href="/blog/">Blog</a></li>
           <li><a href="/#faq">FAQ</a></li>
           <li><a href="/#contact">Contact</a></li>
         </ul>
