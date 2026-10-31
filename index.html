@@ -475,6 +475,14 @@
   .industry-links a::after{content:"↗";flex:none;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--bg-alt);transition:background .15s,transform .15s}
   .industry-links a:hover::after,.industry-links a:focus-visible::after{background:var(--yellow);transform:translate(2px,-2px)}
   .industry-links a:focus-visible{outline:2px solid var(--black);outline-offset:3px}
+  .services-section{padding:72px 0;background:var(--bg)}
+  .services-intro{max-width:68ch}.services-intro h2{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:500;line-height:1.15}.services-intro p{margin-top:14px;line-height:1.6;color:var(--muted)}
+  .service-links{display:grid;gap:14px;list-style:none;padding:0;margin:28px 0 0;grid-template-columns:1fr}
+  @media(min-width:600px){.service-links{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media(min-width:1000px){.service-links{grid-template-columns:repeat(3,minmax(0,1fr))}}
+  .service-links a{display:flex;flex-direction:column;gap:10px;height:100%;padding:22px;border:1px solid var(--border);border-radius:16px;background:var(--white);color:var(--fg);text-decoration:none;transition:border-color .15s,transform .15s,box-shadow .15s}
+  .service-links a:hover,.service-links a:focus-visible{border-color:var(--yellow-strong);transform:translateY(-3px);box-shadow:var(--shadow-lift)}
+  .service-links strong{font-family:'Fraunces',serif;font-size:1.2rem}.service-links span{font-size:.9rem;line-height:1.5;color:var(--muted)}.service-links b{margin-top:auto;color:#806500}
 </style>
 </head>
 <body>
@@ -742,6 +750,17 @@
       </div>
     </div>
   </section>
+
+  <section class="services-section" id="services"><div class="container">
+    <div class="services-intro"><h2>More ways to grow your construction business online</h2><p>From getting found in search to keeping your website running, explore the services that support your business.</p></div>
+    <ul class="service-links">
+        <li><a href="/seo-for-construction-companies/"><strong>Construction SEO</strong><span>Help customers find your services in search.</span><b aria-hidden="true">Explore service ↗</b></a></li>
+        <li><a href="/google-ads-for-contractors/"><strong>Google Ads for contractors</strong><span>Reach people searching for the work you do.</span><b aria-hidden="true">Explore service ↗</b></a></li>
+        <li><a href="/website-hosting-and-maintenance-for-contractors/"><strong>Hosting &amp; maintenance</strong><span>Give your website a home after launch.</span><b aria-hidden="true">Explore service ↗</b></a></li>
+        <li><a href="/branding-for-construction-companies/"><strong>Logo &amp; branding</strong><span>Create a consistent look for your business.</span><b aria-hidden="true">Explore service ↗</b></a></li>
+        <li><a href="/copywriting-for-construction-websites/"><strong>Construction copywriting</strong><span>Explain your work in clear, useful language.</span><b aria-hidden="true">Explore service ↗</b></a></li>
+    </ul>
+  </div></section>
 
   <!-- PRICING -->
   <section id="pricing" class="pricing">
