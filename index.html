@@ -26,12 +26,6 @@
       "@id": "https://webdesignforconstructioncompanies.com/#organization",
       "name": "BuildSite Media",
       "url": "https://webdesignforconstructioncompanies.com/",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Buffalo",
-        "addressRegion": "NY",
-        "addressCountry": "US"
-      },
       "areaServed": {
         "@type": "Country",
         "name": "United States"
@@ -352,8 +346,12 @@
   .band p.lede{margin-top:14px;font-size:clamp(1.02rem,1.5vw,1.15rem);line-height:1.6;color:var(--on-dark)}
   .cards2{display:grid;gap:18px}
   @media(min-width:640px){.cards2{grid-template-columns:1fr 1fr}}
-  .card{background:rgba(255,255,255,0.97);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:22px}
-  .card h3{font-size:1.3rem;font-weight:600;color:var(--fg)}
+  .card{position:relative;overflow:hidden;background:var(--white);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:26px 22px 22px;box-shadow:0 12px 28px rgb(0 0 0 / 0.2)}
+  .card::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;background:var(--yellow)}
+  .card h3{display:flex;align-items:center;gap:12px;font-size:1.3rem;font-weight:600;color:var(--fg)}
+  .card h3::before{display:grid;place-items:center;flex:none;width:38px;height:38px;border-radius:10px;background:var(--yellow);color:var(--black);font-family:system-ui,sans-serif;font-size:0.8rem;font-weight:800}
+  .card:first-child h3::before{content:"01"}
+  .card:last-child h3::before{content:"02"}
   .card ul{margin-top:16px;display:grid;gap:10px}
   .card li{display:flex;gap:10px;font-size:0.95rem;line-height:1.5;color:var(--fg);opacity:0.88}
   .card li svg{flex:none;width:16px;height:16px;margin-top:3px;color:var(--yellow-strong)}
@@ -644,7 +642,7 @@
     <div class="container feature-grid reverse">
       <div>
         <span class="accent-bar" aria-hidden="true"></span>
-        <h2>Search engine optimization (SEO)</h2>
+        <h2>Search engine optimization (SEO) for construction companies</h2>
         <p>When someone needs a remodel, an addition, or a new build, they search general contractor and their town. When it's storm damage or a repair, they search that too.</p>
         <p>SEO is the monthly work after the site is live. The point is those searches reach you, not the next crew.</p>
         <p>Bid-ready jobs and urgent repairs do not use the same words. We put the quote form front and center on the urgent searches. We give remodels, additions, and new builds their own pages.</p>
@@ -703,7 +701,7 @@
     <div class="container band-grid">
       <div>
         <h2>What a construction website actually has to do</h2>
-        <p class="lede">What we do and build into your site.</p>
+        <p class="lede">Your website needs to show people what you build, where you work, and why they can trust your crew. It should make it easy to explore your services and reach out when a project is ready to bid. We bring the design and search foundations together so the right customers can find you and take the next step.</p>
       </div>
       <div class="cards2">
         <article class="card">
@@ -888,15 +886,6 @@
       <div>
         <p class="lede">We would love to see if we are a good fit for your business, and see if we can help you take it to the next level.</p>
         <p class="lede">If you are intrigued and would like to learn more, reach out to us and let's see if we are a good fit.</p>
-        <address>
-          <div class="addr-row">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
-            <div>
-              <p class="k">Based in</p>
-              <p class="v">Buffalo, New York</p>
-            </div>
-          </div>
-        </address>
       </div>
       <div class="quote-card" id="start">
         <h2>Tell us about your construction company</h2>
@@ -937,9 +926,6 @@
       <div class="footer-brand">
         <p>BuildSite Media</p>
         <p class="tag">web design for construction companies</p>
-        <address>
-          <span>Buffalo, New York</span>
-        </address>
       </div>
       <nav class="footer-nav" aria-label="Sitemap">
         <h2>Sitemap</h2>
