@@ -377,19 +377,20 @@
   .contact-action .action-note{margin-top:18px;color:var(--muted);font-size:.9rem;line-height:1.5}
 
   /* Footer */
-  footer{background:var(--black-strong);color:rgba(255,255,255,0.65)}
-  .footer-inner{padding:48px 0}
+  footer{background:var(--black-strong);color:rgba(255,255,255,0.7)}
+  .footer-inner{padding:56px 0 48px}
   .footer-grid{display:grid;gap:40px}
-  @media(min-width:768px){.footer-grid{grid-template-columns:1.4fr 1fr}}
-  .footer-brand p:first-child{font-family:'Fraunces',serif;font-size:1.25rem;font-weight:600;color:#fff}
+  @media(min-width:768px){.footer-grid{grid-template-columns:minmax(0,1fr) 140px;gap:48px}}
+  .footer-brand>p:first-child{font-family:'Fraunces',serif;font-size:1.25rem;font-weight:600;color:#fff}
   .footer-brand .tag{margin-top:4px;font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.16em;color:var(--yellow)}
-  .footer-brand address{margin-top:20px;display:flex;flex-direction:column;gap:8px;font-size:0.9rem}
-  .footer-brand a{display:inline-flex;align-items:center;gap:8px;width:fit-content;transition:color .15s}
-  .footer-brand a:hover{color:var(--yellow)}
-  .footer-nav h2{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:rgba(255,255,255,0.5)}
-  .footer-nav ul{margin-top:16px;display:grid;gap:10px}
-  .footer-nav a{font-size:0.9rem;transition:color .15s}
-  .footer-nav a:hover{color:var(--yellow)}
+  .footer-directory{display:grid;gap:30px;margin-top:34px}
+  @media(min-width:600px){.footer-directory{grid-template-columns:minmax(0,2fr) minmax(170px,1fr);gap:36px}}
+  .footer-group h2,.footer-nav h2{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:rgba(255,255,255,0.55)}
+  .footer-group ul,.footer-nav ul{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:12px}
+  @media(min-width:600px){.footer-industries ul{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px}}
+  .footer-group a,.footer-nav a{display:inline-block;color:inherit;font-size:0.88rem;line-height:1.45;text-decoration:none;transition:color .15s}
+  .footer-group a:hover,.footer-nav a:hover{color:var(--yellow)}
+  .footer-group a:focus-visible,.footer-nav a:focus-visible{outline:2px solid var(--yellow);outline-offset:4px}
   .footer-bottom{margin-top:44px;border-top:1px solid rgba(255,255,255,0.15);padding-top:22px;font-size:0.78rem}
 
   /* Scroll-triggered sticky CTA */
@@ -776,14 +777,43 @@
       <div class="footer-brand">
         <p>BuildSite Media</p>
         <p class="tag">web design for construction companies</p>
+        <nav class="footer-directory" aria-label="Industry and service pages">
+          <div class="footer-group footer-industries">
+            <h2>Industries</h2>
+            <ul>
+              <li><a href="/general-contractors/">General contractors</a></li>
+              <li><a href="/custom-home-builders/">Custom home builders</a></li>
+              <li><a href="/remodeling-companies/">Remodeling companies</a></li>
+              <li><a href="/commercial-construction-firms/">Commercial construction firms</a></li>
+              <li><a href="/roofing-companies/">Roofing companies</a></li>
+              <li><a href="/concrete-contractors/">Concrete contractors</a></li>
+              <li><a href="/excavation-and-site-work/">Excavation &amp; site work</a></li>
+              <li><a href="/paving-contractors/">Paving contractors</a></li>
+              <li><a href="/framing-contractors/">Framing contractors</a></li>
+              <li><a href="/drywall-contractors/">Drywall contractors</a></li>
+              <li><a href="/demolition-contractors/">Demolition contractors</a></li>
+              <li><a href="/steel-erectors/">Steel erectors</a></li>
+            </ul>
+          </div>
+          <div class="footer-group">
+            <h2>Services</h2>
+            <ul>
+              <li><a href="/seo-for-construction-companies/">Construction SEO</a></li>
+              <li><a href="/google-ads-for-contractors/">Google Ads for contractors</a></li>
+              <li><a href="/website-hosting-and-maintenance-for-contractors/">Hosting &amp; maintenance</a></li>
+              <li><a href="/branding-for-construction-companies/">Logo &amp; branding</a></li>
+              <li><a href="/copywriting-for-construction-websites/">Construction copywriting</a></li>
+            </ul>
+          </div>
+        </nav>
       </div>
       <nav class="footer-nav" aria-label="Sitemap">
-        <h2>Sitemap</h2>
+        <h2>Explore</h2>
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="/#pricing">Pricing</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+          <li><a href="/#contact">Contact</a></li>
         </ul>
       </nav>
     </div>
