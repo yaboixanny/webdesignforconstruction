@@ -452,12 +452,24 @@
   body{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
   @media(min-width:1024px){body{padding-bottom:0}}
 
-  .industries{padding:64px 0;background:var(--bg-alt)}
-  .industries h2{font-size:clamp(1.75rem,3.2vw,2.7rem);font-weight:500}
-  .industries p{margin-top:12px;max-width:65ch;line-height:1.6}
-  .industry-links{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:24px;list-style:none}
-  .industry-links a{display:block;height:100%;padding:16px 18px;border:1px solid var(--border);border-radius:12px;background:var(--white);color:var(--fg);font-weight:700;text-decoration:none}
-  .industry-links a:hover,.industry-links a:focus-visible{border-color:var(--yellow-strong);box-shadow:var(--shadow-lift)}
+  .industries{padding:76px 0;background:var(--bg-alt)}
+  .industries-intro{display:grid;gap:18px;align-items:end;margin-bottom:34px}
+  @media(min-width:768px){.industries-intro{grid-template-columns:1.15fr 1fr;gap:48px}}
+  .industries .eyebrow{display:inline-flex;align-items:center;gap:9px;margin:0 0 14px;font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;font-weight:800}
+  .industries .eyebrow::before{content:"";width:26px;height:4px;background:var(--yellow)}
+  .industries h2{max-width:19ch;font-size:clamp(1.9rem,3.7vw,3rem);font-weight:500;line-height:1.12}
+  .industries-intro>p{max-width:48ch;line-height:1.65;color:var(--muted)}
+  .industry-groups{display:grid;gap:16px}
+  @media(min-width:768px){.industry-groups{grid-template-columns:repeat(3,minmax(0,1fr))}}
+  .industry-group{padding:24px;background:var(--white);border:1px solid var(--border);border-radius:18px;box-shadow:0 8px 24px rgb(0 0 0 / .04)}
+  .industry-group h3{display:flex;align-items:center;gap:12px;padding-bottom:17px;border-bottom:1px solid var(--border);font-size:1.12rem}
+  .industry-group h3 span{display:grid;place-items:center;width:36px;height:36px;flex:none;background:var(--yellow);border-radius:10px;font-family:system-ui,sans-serif;font-size:.75rem;font-weight:800}
+  .industry-links{list-style:none;margin:8px 0 0;padding:0}
+  .industry-links a{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 0;border-bottom:1px solid var(--border);color:var(--fg);font-size:.92rem;font-weight:700;text-decoration:none;line-height:1.4}
+  .industry-links li:last-child a{border-bottom:0;padding-bottom:2px}
+  .industry-links a::after{content:"↗";flex:none;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--bg-alt);transition:background .15s,transform .15s}
+  .industry-links a:hover::after,.industry-links a:focus-visible::after{background:var(--yellow);transform:translate(2px,-2px)}
+  .industry-links a:focus-visible{outline:2px solid var(--black);outline-offset:3px}
 </style>
 </head>
 <body>
@@ -691,22 +703,36 @@
 
   <section id="industries" class="industries">
     <div class="container">
-      <h2>Web design for your construction trade</h2>
-      <p>Different construction businesses need to reach different customers. Explore how we can build a site around your work.</p>
-      <ul class="industry-links">
-        <li><a href="/roofing-companies/">Website design for roofing companies</a></li>
-        <li><a href="/general-contractors/">Website design for general contractors</a></li>
-        <li><a href="/custom-home-builders/">Website design for custom home builders</a></li>
-        <li><a href="/remodeling-companies/">Website design for remodeling companies</a></li>
-        <li><a href="/concrete-contractors/">Website design for concrete contractors</a></li>
-        <li><a href="/excavation-and-site-work/">Website design for excavation and site work companies</a></li>
-        <li><a href="/commercial-construction-firms/">Website design for commercial construction firms</a></li>
-        <li><a href="/paving-contractors/">Website design for paving contractors</a></li>
-        <li><a href="/framing-contractors/">Website design for framing contractors</a></li>
-        <li><a href="/drywall-contractors/">Website design for drywall contractors</a></li>
-        <li><a href="/demolition-contractors/">Website design for demolition contractors</a></li>
-        <li><a href="/steel-erectors/">Website design for steel erectors</a></li>
-      </ul>
+      <div class="industries-intro">
+        <div><p class="eyebrow">Built for your trade</p><h2>Construction is your specialty. Websites are ours.</h2></div>
+        <p>Every trade has different customers and different jobs to win. Find yours to see how we can build a website around the work you do.</p>
+      </div>
+      <div class="industry-groups">
+      <div class="industry-group"><h3><span aria-hidden="true">01</span>Builders & remodelers</h3>
+        <ul class="industry-links">
+          <li><a href="/general-contractors/">General contractors</a></li>
+          <li><a href="/custom-home-builders/">Custom home builders</a></li>
+          <li><a href="/remodeling-companies/">Remodeling companies</a></li>
+          <li><a href="/commercial-construction-firms/">Commercial construction firms</a></li>
+        </ul>
+      </div>
+      <div class="industry-group"><h3><span aria-hidden="true">02</span>Exterior & site work</h3>
+        <ul class="industry-links">
+          <li><a href="/roofing-companies/">Roofing companies</a></li>
+          <li><a href="/concrete-contractors/">Concrete contractors</a></li>
+          <li><a href="/excavation-and-site-work/">Excavation & site work</a></li>
+          <li><a href="/paving-contractors/">Paving contractors</a></li>
+        </ul>
+      </div>
+      <div class="industry-group"><h3><span aria-hidden="true">03</span>Specialty trades</h3>
+        <ul class="industry-links">
+          <li><a href="/framing-contractors/">Framing contractors</a></li>
+          <li><a href="/drywall-contractors/">Drywall contractors</a></li>
+          <li><a href="/demolition-contractors/">Demolition contractors</a></li>
+          <li><a href="/steel-erectors/">Steel erectors</a></li>
+        </ul>
+      </div>
+      </div>
     </div>
   </section>
 
