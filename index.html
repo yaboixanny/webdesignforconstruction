@@ -442,6 +442,7 @@
   .footer-group a,.footer-nav a{display:inline-block;color:inherit;font-size:0.88rem;line-height:1.45;text-decoration:none;transition:color .15s}
   .footer-group a:hover,.footer-nav a:hover{color:var(--yellow)}
   .footer-group a:focus-visible,.footer-nav a:focus-visible{outline:2px solid var(--yellow);outline-offset:4px}
+  @media(min-width:600px){.footer-resources{grid-column:1 / -1}.footer-resources ul{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px}}
   .footer-bottom{margin-top:44px;border-top:1px solid rgba(255,255,255,0.15);padding-top:22px;font-size:0.78rem}
 
   /* Scroll-triggered sticky CTA */
@@ -485,6 +486,17 @@
   .service-links a{display:flex;flex-direction:column;gap:10px;height:100%;padding:22px;border:1px solid var(--border);border-radius:16px;background:var(--white);color:var(--fg);text-decoration:none;transition:border-color .15s,transform .15s,box-shadow .15s}
   .service-links a:hover,.service-links a:focus-visible{border-color:var(--yellow-strong);transform:translateY(-3px);box-shadow:var(--shadow-lift)}
   .service-links strong{font-family:'Fraunces',serif;font-size:1.2rem}.service-links span{font-size:.9rem;line-height:1.5;color:var(--muted)}.service-links b{margin-top:auto;color:#806500}
+
+  .post-hero{background:var(--bg-alt);padding:clamp(60px,7vw,100px) 0 55px}
+  .post-wrap{max-width:850px;margin:0 auto;padding:0 20px}
+  .post-kicker{color:#806500;font-weight:800;font-size:.78rem;letter-spacing:.13em;text-transform:uppercase}
+  .post-hero h1{margin-top:17px;font-size:clamp(2.3rem,5vw,4rem);line-height:1.08;letter-spacing:-.025em}
+  .post-intro{margin-top:22px;font-size:clamp(1.05rem,1.8vw,1.22rem);line-height:1.7;color:var(--muted)}
+  .post-meta{margin-top:22px;font-size:.84rem;font-weight:700;color:var(--muted)}
+  .post-body{padding:54px 0 72px;background:var(--bg)}
+  .post-body section+section{margin-top:34px}.post-body h2{font-size:clamp(1.45rem,2.4vw,2rem);line-height:1.2}.post-body p{margin-top:14px;font-size:1.04rem;line-height:1.8;color:var(--fg)}
+  .post-body a{color:#654d00;text-decoration:underline;text-underline-offset:3px}.post-next{margin-top:42px;padding:24px;border-left:5px solid var(--yellow);background:var(--bg-alt);border-radius:0 12px 12px 0}.post-next p:first-child{margin-top:0}
+  .resources{padding:70px 0;background:var(--bg-alt)}.resources h2{font-size:clamp(1.8rem,3vw,2.7rem);font-weight:500}.resources>div>p{margin-top:12px;line-height:1.6;color:var(--muted)}.resource-grid{display:grid;gap:14px;margin:26px 0 0;padding:0;list-style:none}@media(min-width:700px){.resource-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}.resource-grid a{height:100%;display:flex;flex-direction:column;gap:10px;padding:22px;border:1px solid var(--border);border-radius:15px;background:var(--white);text-decoration:none;color:var(--fg)}.resource-grid a:hover,.resource-grid a:focus-visible{border-color:var(--yellow-strong);box-shadow:var(--shadow-lift)}.resource-grid strong{font-family:'Fraunces',serif;font-size:1.1rem;line-height:1.35}.resource-grid span{margin-top:auto;color:#705600;font-size:.85rem;font-weight:700}
 </style>
 </head>
 <body>
@@ -764,6 +776,14 @@
     </ul>
   </div></section>
 
+  <section class="resources" id="resources"><div class="container"><h2>Resources for construction companies</h2><p>Practical guidance to help your website reach the right customers and turn interest into inquiries.</p><ul class="resource-grid">
+      <li><a href="/what-pages-should-a-construction-company-website-have/"><strong>What pages should a construction company website have?</strong><span>Read article →</span></a></li>
+      <li><a href="/how-to-get-more-commercial-construction-leads-online/"><strong>How to get more commercial construction leads online</strong><span>Read article →</span></a></li>
+      <li><a href="/google-business-profile-tips-for-contractors/"><strong>Google Business Profile tips for contractors</strong><span>Read article →</span></a></li>
+      <li><a href="/construction-website-seo-checklist/"><strong>Construction website SEO checklist</strong><span>Read article →</span></a></li>
+      <li><a href="/why-your-construction-website-is-not-generating-leads/"><strong>Why your construction website isn’t generating leads</strong><span>Read article →</span></a></li>
+    </ul></div></section>
+
   <!-- PRICING -->
   <section id="pricing" class="pricing">
     <div class="container">
@@ -926,6 +946,15 @@
               <li><a href="/website-hosting-and-maintenance-for-contractors/">Hosting &amp; maintenance</a></li>
               <li><a href="/branding-for-construction-companies/">Logo &amp; branding</a></li>
               <li><a href="/copywriting-for-construction-websites/">Construction copywriting</a></li>
+            </ul>
+          </div>
+          <div class="footer-group footer-resources"><h2>Resources</h2>
+            <ul>
+              <li><a href="/what-pages-should-a-construction-company-website-have/">What pages should a construction company website have?</a></li>
+              <li><a href="/how-to-get-more-commercial-construction-leads-online/">How to get more commercial construction leads online</a></li>
+              <li><a href="/google-business-profile-tips-for-contractors/">Google Business Profile tips for contractors</a></li>
+              <li><a href="/construction-website-seo-checklist/">Construction website SEO checklist</a></li>
+              <li><a href="/why-your-construction-website-is-not-generating-leads/">Why your construction website isn’t generating leads</a></li>
             </ul>
           </div>
         </nav>
