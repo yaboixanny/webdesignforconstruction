@@ -348,6 +348,13 @@
   .post-body section+section{margin-top:34px}.post-body h2{font-size:clamp(1.45rem,2.4vw,2rem);line-height:1.2}.post-body p{margin-top:14px;font-size:1.04rem;line-height:1.8;color:var(--fg)}
   .post-body a{color:#654d00;text-decoration:underline;text-underline-offset:3px}.post-next{margin-top:42px;padding:24px;border-left:5px solid var(--yellow);background:var(--bg-alt);border-radius:0 12px 12px 0}.post-next p:first-child{margin-top:0}
   .resources{padding:70px 0;background:var(--bg-alt)}.resources h2{font-size:clamp(1.8rem,3vw,2.7rem);font-weight:500}.resources>div>p{margin-top:12px;line-height:1.6;color:var(--muted)}.resource-grid{display:grid;gap:14px;margin:26px 0 0;padding:0;list-style:none}@media(min-width:700px){.resource-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}.resource-grid a{height:100%;display:flex;flex-direction:column;gap:10px;padding:22px;border:1px solid var(--border);border-radius:15px;background:var(--white);text-decoration:none;color:var(--fg)}.resource-grid a:hover,.resource-grid a:focus-visible{border-color:var(--yellow-strong);box-shadow:var(--shadow-lift)}.resource-grid strong{font-family:'Fraunces',serif;font-size:1.1rem;line-height:1.35}.resource-grid span{margin-top:auto;color:#705600;font-size:.85rem;font-weight:700}
+  .article-toc{margin:0 0 48px;padding:26px 28px;background:var(--black);color:var(--on-dark);border-radius:18px}
+  .article-toc h2{font-size:1.2rem;color:white}.article-toc ol{list-style:none;counter-reset:toc;margin:18px 0 0;padding:0;display:grid;gap:11px}
+  @media(min-width:700px){.article-toc ol{grid-template-columns:1fr 1fr;column-gap:24px}}
+  .article-toc li{counter-increment:toc;display:flex;gap:10px;line-height:1.45}.article-toc li::before{content:counter(toc,decimal-leading-zero);font-size:.75rem;font-weight:800;color:var(--yellow);padding-top:3px}.article-toc a{color:var(--on-dark);text-decoration:none}.article-toc a:hover,.article-toc a:focus-visible{color:var(--yellow);text-decoration:underline}
+  .post-body .article-section{scroll-margin-top:100px;padding-top:8px}.article-section h2{display:flex;align-items:baseline;gap:14px}.article-section h2 span{color:#8a6c00;font-family:system-ui,sans-serif;font-size:.8rem;font-weight:800}
+  .article-note{margin:30px 0;padding:24px 26px;border-radius:14px;background:#fff3c4;border:1px solid #e9d780}.article-note strong{display:block;font-size:.78rem;letter-spacing:.09em;text-transform:uppercase}.post-body .article-note p{margin-top:8px}
+  .article-checklist{margin:38px 0;padding:27px;border:1px solid var(--border);border-radius:16px;background:var(--white)}.article-checklist h2{font-size:1.4rem}.article-checklist ul{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:12px}.article-checklist li{display:flex;gap:12px;line-height:1.6}.article-checklist li::before{content:"✓";flex:none;color:#806500;font-weight:800}
 </style>
 </head>
 <body>
@@ -394,12 +401,48 @@
   <article>
     <div class="post-hero"><div class="post-wrap"><p class="post-kicker">Construction website resources</p><h1>Construction website SEO checklist</h1><p class="post-intro">Search engine optimization starts with making a construction website useful and understandable. Work through this checklist with the services, locations, and customers you actually serve in mind. None of these steps guarantees a ranking.</p><p class="post-meta">By BuildSite Media · October 31, 2026</p></div></div>
     <div class="post-body"><div class="post-wrap">
-      <section><h2>1. Match pages to real services</h2><p>List your main services and the questions each buyer asks. A commercial tenant improvement and an emergency roof repair are different searches. Give a service its own page when it deserves distinct information, and write a descriptive page title and main heading that reflect the content.</p></section>
-      <section><h2>2. Explain your coverage honestly</h2><p>Identify the areas where your crew really works. If a location page adds useful local project information or service details, it may be worth creating. Do not make dozens of near-identical pages that change only the town name.</p></section>
-      <section><h2>3. Make the site easy to access and use</h2><p>Check that important pages load, work on mobile, and can be reached through normal links. Review page titles, links, and image descriptions for clarity. Use descriptive alt text when an image conveys useful information, and avoid filling it with unrelated keywords.</p></section>
-      <section><h2>4. Connect related content</h2><p>Link from helpful resources to the service pages that answer the next question. For example, an article about planning a construction website can lead naturally to your website design service. Use descriptive link text so people know where the link goes.</p></section>
-      <section><h2>5. Measure and improve over time</h2><p>Use available search and website data to identify pages that get relevant visits or inquiries. Check the contact form and ask your team which inquiries are a good fit. Improve useful pages before adding more; Google’s <a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide">SEO starter guide</a> explains the fundamentals and their limits.</p></section>
-      <aside class="post-next"><p>Need help putting these ideas to work? Explore our <a href="/">web design services for construction companies</a> and tell us about your business.</p><p>For ongoing on-page improvements, explore our <a href="/seo-for-construction-companies/">construction SEO services</a>.</p></aside>
+      <nav class="article-toc" aria-label="Article contents"><h2>What to know</h2><ol>
+          <li><a href="#goals">Start with the work you want to attract</a></li>
+          <li><a href="#service-pages">Give key services useful pages</a></li>
+          <li><a href="#locations">Describe your service area accurately</a></li>
+          <li><a href="#crawlability">Make important pages reachable</a></li>
+          <li><a href="#mobile">Test the site on a phone</a></li>
+          <li><a href="#images">Use accurate image descriptions</a></li>
+          <li><a href="#links">Connect the next useful page</a></li>
+          <li><a href="#measure">Review performance and lead fit</a></li>
+      </ol></nav>
+      <section class="article-section" id="goals"><h2><span>01</span>Start with the work you want to attract</h2>
+        <p>List your main services, ideal customers, and actual service area before editing page titles or adding content. A contractor seeking commercial build-outs has different priorities from a roofer trying to reach homeowners with leaks. The best page structure depends on those differences.</p><p>Ask your team which inquiries are useful and which are not. A practical SEO plan should help a potential customer understand your work and find the next step, not simply increase traffic that has no connection to your business.</p>
+      </section>
+      <section class="article-section" id="service-pages"><h2><span>02</span>Give key services useful pages</h2>
+        <p>Explain what each important service involves, who it serves, and how someone can request a conversation. Separate pages can be useful when two services have different buyers or questions, such as concrete flatwork and foundations. A single organized page may be appropriate for a smaller range of closely related work.</p><p>Use the words your customers would naturally use, but write for a person rather than repeating a phrase in every sentence. Give every page a descriptive main heading and a title that accurately reflects what is on it.</p>
+      </section>
+      <aside class="article-note"><strong>Keep in mind</strong><p>Treat this as a repeatable review, not a one-time ranking promise. Useful, accurate pages and working contact paths are the foundation.</p></aside>
+      <section class="article-section" id="locations"><h2><span>03</span>Describe your service area accurately</h2>
+        <p>Make it clear where you actually work and which projects are a fit. If a separate location page provides useful information about the area, your services there, or approved projects, it may help a visitor. Keep any claims and geographic coverage current.</p><p>Avoid producing a stack of nearly identical pages that only replace one town name with another. More pages are not automatically more helpful, and every additional page needs to remain accurate as your business changes.</p>
+      </section>
+      <section class="article-section" id="crawlability"><h2><span>04</span>Make important pages reachable</h2>
+        <p>Check that a visitor can reach the pages you want them to find through ordinary links. Confirm that pages load, that links lead to the intended destinations, and that any canonical addresses and sitemap entries match the live pages. A sitemap can help discovery but does not guarantee indexing.</p><p>Review whether pages are accidentally blocked from search engines before assuming an SEO issue is caused by copy. Google’s <a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide">SEO starter guide</a> explains these basics and their limitations.</p>
+      </section>
+      <section class="article-section" id="mobile"><h2><span>05</span>Test the site on a phone</h2>
+        <p>Many construction customers will find your business while away from a desktop. Check that text is readable, navigation works, and a visitor can open the relevant service page and contact you without fighting the layout. Make sure images load without obscuring the important information.</p><p>Test with the devices and connections you can reasonably access. A fast, usable experience supports visitors, but a particular speed score by itself is not a promise of better rankings or more leads.</p>
+      </section>
+      <section class="article-section" id="images"><h2><span>06</span>Use accurate image descriptions</h2>
+        <p>Use real photographs and illustrations that support the content, with permission where needed. If an image conveys information, its alternative text should describe that information in context. For example, identify a completed patio or the scope shown instead of inserting unrelated keyword lists.</p><p>Decorative images may not need a descriptive announcement. Check that filenames, captions, and project descriptions are accurate and that images do not imply your company completed work it did not perform.</p>
+      </section>
+      <section class="article-section" id="links"><h2><span>07</span>Connect the next useful page</h2>
+        <p>Link related content where it helps a customer continue. A guide to choosing construction website pages can point to the relevant website design service, while a commercial project article can link to a commercial construction page. Use anchor text that tells the reader where the link goes.</p><p>A small number of meaningful links is more useful than a list of unrelated destinations. Check links after moving or renaming pages, and make sure the linked service is actually offered by the business.</p>
+      </section>
+      <section class="article-section" id="measure"><h2><span>08</span>Review performance and lead fit</h2>
+        <p>Use the search and website information available to you to identify pages that attract relevant visitors and inquiries. Check your forms and ask the team handling calls which questions and project types appear most often. Protect customer data and use tracking according to your applicable requirements.</p><p>Improve the pages that need attention and review the outcome over time. Search results depend on competition, search engines, and many other factors; no checklist can guarantee a ranking or a fixed number of leads.</p>
+      </section>
+      <aside class="article-checklist"><h2>A quick checklist</h2><ul>
+        <li>Confirm each priority service has clear, useful information.</li>
+        <li>Review service-area claims, page titles, links, and sitemap entries.</li>
+        <li>Test mobile navigation and the quote form using your own details.</li>
+        <li>Use actual inquiry quality to guide the next improvement.</li>
+      </ul></aside>
+      <aside class="post-next"><p>Need help putting these ideas to work? Explore our <a href="/">web design services for construction companies</a> and tell us about your business.</p><p>For a closer look, explore our <a href="/seo-for-construction-companies/">construction SEO services</a>.</p></aside>
     </div></div>
   </article>
   <!-- CONTACT -->

@@ -348,6 +348,13 @@
   .post-body section+section{margin-top:34px}.post-body h2{font-size:clamp(1.45rem,2.4vw,2rem);line-height:1.2}.post-body p{margin-top:14px;font-size:1.04rem;line-height:1.8;color:var(--fg)}
   .post-body a{color:#654d00;text-decoration:underline;text-underline-offset:3px}.post-next{margin-top:42px;padding:24px;border-left:5px solid var(--yellow);background:var(--bg-alt);border-radius:0 12px 12px 0}.post-next p:first-child{margin-top:0}
   .resources{padding:70px 0;background:var(--bg-alt)}.resources h2{font-size:clamp(1.8rem,3vw,2.7rem);font-weight:500}.resources>div>p{margin-top:12px;line-height:1.6;color:var(--muted)}.resource-grid{display:grid;gap:14px;margin:26px 0 0;padding:0;list-style:none}@media(min-width:700px){.resource-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}.resource-grid a{height:100%;display:flex;flex-direction:column;gap:10px;padding:22px;border:1px solid var(--border);border-radius:15px;background:var(--white);text-decoration:none;color:var(--fg)}.resource-grid a:hover,.resource-grid a:focus-visible{border-color:var(--yellow-strong);box-shadow:var(--shadow-lift)}.resource-grid strong{font-family:'Fraunces',serif;font-size:1.1rem;line-height:1.35}.resource-grid span{margin-top:auto;color:#705600;font-size:.85rem;font-weight:700}
+  .article-toc{margin:0 0 48px;padding:26px 28px;background:var(--black);color:var(--on-dark);border-radius:18px}
+  .article-toc h2{font-size:1.2rem;color:white}.article-toc ol{list-style:none;counter-reset:toc;margin:18px 0 0;padding:0;display:grid;gap:11px}
+  @media(min-width:700px){.article-toc ol{grid-template-columns:1fr 1fr;column-gap:24px}}
+  .article-toc li{counter-increment:toc;display:flex;gap:10px;line-height:1.45}.article-toc li::before{content:counter(toc,decimal-leading-zero);font-size:.75rem;font-weight:800;color:var(--yellow);padding-top:3px}.article-toc a{color:var(--on-dark);text-decoration:none}.article-toc a:hover,.article-toc a:focus-visible{color:var(--yellow);text-decoration:underline}
+  .post-body .article-section{scroll-margin-top:100px;padding-top:8px}.article-section h2{display:flex;align-items:baseline;gap:14px}.article-section h2 span{color:#8a6c00;font-family:system-ui,sans-serif;font-size:.8rem;font-weight:800}
+  .article-note{margin:30px 0;padding:24px 26px;border-radius:14px;background:#fff3c4;border:1px solid #e9d780}.article-note strong{display:block;font-size:.78rem;letter-spacing:.09em;text-transform:uppercase}.post-body .article-note p{margin-top:8px}
+  .article-checklist{margin:38px 0;padding:27px;border:1px solid var(--border);border-radius:16px;background:var(--white)}.article-checklist h2{font-size:1.4rem}.article-checklist ul{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:12px}.article-checklist li{display:flex;gap:12px;line-height:1.6}.article-checklist li::before{content:"✓";flex:none;color:#806500;font-weight:800}
 </style>
 </head>
 <body>
@@ -394,12 +401,48 @@
   <article>
     <div class="post-hero"><div class="post-wrap"><p class="post-kicker">Construction website resources</p><h1>Google Business Profile tips for contractors</h1><p class="post-intro">Your Google Business Profile can help customers understand what your business does and how to contact you. Start by making the information accurate and keeping it current; a profile is not a substitute for the details and project information on your website.</p><p class="post-meta">By BuildSite Media · October 31, 2026</p></div></div>
     <div class="post-body"><div class="post-wrap">
-      <section><h2>Use your real business name and details</h2><p>Represent the business as it is known in the real world. Choose the most accurate primary category available, add a phone number under your business’s control, and link to the website that represents your company. Do not add extra service keywords to your business name unless they are part of its real-world name.</p></section>
-      <section><h2>Set your address and service area correctly</h2><p>A contractor who travels to customers and does not serve them at a staffed business address should follow Google’s service-area rules, including hiding the address where required. If you receive customers at a staffed location, different rules can apply. Describe the areas you actually serve and do not create virtual locations just to appear in more towns.</p></section>
-      <section><h2>Describe your actual services</h2><p>Add services that your company genuinely offers and keep hours and contact information up to date. A roofing contractor who handles both inspections and replacements can explain those services clearly; a remodeler can distinguish kitchens from additions where appropriate.</p></section>
-      <section><h2>Use authentic photos and reviews</h2><p>Upload real photos that represent your work and have permission to share. Invite customers to leave honest reviews, and respond professionally without disclosing private project details. Do not buy reviews, offer incentives for reviews, or post feedback attributed to invented customers.</p></section>
-      <section><h2>Check the profile and its destination</h2><p>Review the public information periodically and check that the website link and phone number work on mobile. If Google asks you to verify or update information, follow its current instructions. See Google’s <a href="https://support.google.com/business/answer/3038177">business profile guidelines</a> and <a href="https://support.google.com/business/answer/9157481">service-area guidance</a> for the current rules.</p></section>
-      <aside class="post-next"><p>Need help putting these ideas to work? Explore our <a href="/">website design for construction companies</a> and tell us about your business.</p><p>Your profile and website can support the same customer journey; read about our <a href="/seo-for-construction-companies/">SEO for construction companies</a>.</p></aside>
+      <nav class="article-toc" aria-label="Article contents"><h2>What to know</h2><ol>
+          <li><a href="#eligibility">Start with an eligible business</a></li>
+          <li><a href="#business-name">Use your actual name and category</a></li>
+          <li><a href="#address">Handle your address and service area correctly</a></li>
+          <li><a href="#profile-contact">Keep contact details useful</a></li>
+          <li><a href="#services">Describe the work your crew actually does</a></li>
+          <li><a href="#photos">Share genuine project photos</a></li>
+          <li><a href="#reviews">Request and respond to honest reviews</a></li>
+          <li><a href="#maintain">Check the profile regularly</a></li>
+      </ol></nav>
+      <section class="article-section" id="eligibility"><h2><span>01</span>Start with an eligible business</h2>
+        <p>A Google Business Profile should represent a real business that interacts with customers under Google’s eligibility rules. Before creating or changing a profile, check whether your company is a service-area business, a business that receives customers at its location, or a combination of both.</p><p>Use the business identity customers know in the real world. Do not create extra listings for a project site or a city simply because you want to appear there. Google’s rules can change, so review its current guidance before making decisions.</p>
+      </section>
+      <section class="article-section" id="business-name"><h2><span>02</span>Use your actual name and category</h2>
+        <p>Your business name should match how the company is represented in the real world. Adding extra trade names, locations, or promotional phrases solely to influence search can make the listing inaccurate. Choose the most specific category that accurately describes your main business, then review any additional categories for fit.</p><p>A roofer, remodeler, and general contractor may have different primary services. Use the category that reflects what your company actually does, not every service you might occasionally encounter.</p>
+      </section>
+      <aside class="article-note"><strong>Keep in mind</strong><p>Google’s policies and verification methods can change. Use its current documentation when deciding how to represent your location, service area, and reviews.</p></aside>
+      <section class="article-section" id="address"><h2><span>03</span>Handle your address and service area correctly</h2>
+        <p>Contractors often travel to customers rather than receive them at an office. Google’s guidance says a service-area business that does not serve customers at its address should hide that address. A business that also receives customers at a staffed, eligible location may have different options.</p><p>List the areas you actually serve. Do not use a mailbox, an unstaffed virtual office, or a temporary jobsite as a shortcut to a new listing. Review Google’s <a href="https://support.google.com/business/answer/3038177">business profile guidelines</a> and <a href="https://support.google.com/business/answer/9157481">service-area instructions</a> for details and exceptions.</p>
+      </section>
+      <section class="article-section" id="profile-contact"><h2><span>04</span>Keep contact details useful</h2>
+        <p>Provide a phone number under the business’s control and a website that represents the company. Check that a customer can reach the correct team and that the linked site works on a phone. Keep your hours accurate, including changes when your actual availability changes.</p><p>If you do not offer round-the-clock emergency service, do not imply otherwise. A clear description of how customers should reach you is more useful than a promise your crew cannot meet.</p>
+      </section>
+      <section class="article-section" id="services"><h2><span>05</span>Describe the work your crew actually does</h2>
+        <p>Add services that reflect your real offerings. A roofing company may distinguish inspections, repairs, and replacements; a remodeling company may focus on kitchens, bathrooms, or additions. Use straightforward descriptions that help a customer understand the scope.</p><p>Keep your profile consistent with the services explained on your website. When you stop taking a type of project, update both so customers do not spend time asking for work your team no longer accepts.</p>
+      </section>
+      <section class="article-section" id="photos"><h2><span>06</span>Share genuine project photos</h2>
+        <p>Use photographs of work your company actually performed and obtain permission where needed. Choose images that make the project understandable: a completed roof, a concrete driveway, or a remodel can show the type of work customers are researching. Avoid exposing addresses, private details, or customer belongings without approval.</p><p>Review older images periodically. A photo does not need elaborate marketing language; it needs to represent your business honestly and help the viewer recognize the services you provide.</p>
+      </section>
+      <section class="article-section" id="reviews"><h2><span>07</span>Request and respond to honest reviews</h2>
+        <p>Invite customers to leave honest feedback without offering rewards or requiring a positive review. Do not buy reviews, invent customer names, or post reviews on someone else’s behalf. Google’s <a href="https://support.google.com/contributionpolicy/answer/7400114">contribution policy</a> explains prohibited review practices.</p><p>When responding, be professional and protect customer privacy. Thank a reviewer or address a concern without revealing the customer’s address, project cost, or other information that does not belong in a public response.</p>
+      </section>
+      <section class="article-section" id="maintain"><h2><span>08</span>Check the profile regularly</h2>
+        <p>Look at the public profile periodically to confirm the name, contact details, website, hours, service area, and photographs still reflect your business. If Google requests verification or suggests a change, review it carefully and follow the current instructions.</p><p>Then test the customer’s next step: open the website on a phone, find the relevant service, and confirm the contact method works. A profile can introduce your company, but the website should give a visitor the details needed to decide whether to reach out.</p>
+      </section>
+      <aside class="article-checklist"><h2>A quick checklist</h2><ul>
+        <li>Confirm that your listing and service-area setup reflect the real business.</li>
+        <li>Check the name, category, phone number, hours, and website link.</li>
+        <li>Use authentic photos and invite honest reviews without incentives.</li>
+        <li>Open your website from the profile and test the contact path.</li>
+      </ul></aside>
+      <aside class="post-next"><p>Need help putting these ideas to work? Explore our <a href="/">website design for construction companies</a> and tell us about your business.</p><p>For a closer look, explore our <a href="/seo-for-construction-companies/">SEO for construction companies</a>.</p></aside>
     </div></div>
   </article>
   <!-- CONTACT -->

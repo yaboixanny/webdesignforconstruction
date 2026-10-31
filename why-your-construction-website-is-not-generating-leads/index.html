@@ -348,6 +348,13 @@
   .post-body section+section{margin-top:34px}.post-body h2{font-size:clamp(1.45rem,2.4vw,2rem);line-height:1.2}.post-body p{margin-top:14px;font-size:1.04rem;line-height:1.8;color:var(--fg)}
   .post-body a{color:#654d00;text-decoration:underline;text-underline-offset:3px}.post-next{margin-top:42px;padding:24px;border-left:5px solid var(--yellow);background:var(--bg-alt);border-radius:0 12px 12px 0}.post-next p:first-child{margin-top:0}
   .resources{padding:70px 0;background:var(--bg-alt)}.resources h2{font-size:clamp(1.8rem,3vw,2.7rem);font-weight:500}.resources>div>p{margin-top:12px;line-height:1.6;color:var(--muted)}.resource-grid{display:grid;gap:14px;margin:26px 0 0;padding:0;list-style:none}@media(min-width:700px){.resource-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}.resource-grid a{height:100%;display:flex;flex-direction:column;gap:10px;padding:22px;border:1px solid var(--border);border-radius:15px;background:var(--white);text-decoration:none;color:var(--fg)}.resource-grid a:hover,.resource-grid a:focus-visible{border-color:var(--yellow-strong);box-shadow:var(--shadow-lift)}.resource-grid strong{font-family:'Fraunces',serif;font-size:1.1rem;line-height:1.35}.resource-grid span{margin-top:auto;color:#705600;font-size:.85rem;font-weight:700}
+  .article-toc{margin:0 0 48px;padding:26px 28px;background:var(--black);color:var(--on-dark);border-radius:18px}
+  .article-toc h2{font-size:1.2rem;color:white}.article-toc ol{list-style:none;counter-reset:toc;margin:18px 0 0;padding:0;display:grid;gap:11px}
+  @media(min-width:700px){.article-toc ol{grid-template-columns:1fr 1fr;column-gap:24px}}
+  .article-toc li{counter-increment:toc;display:flex;gap:10px;line-height:1.45}.article-toc li::before{content:counter(toc,decimal-leading-zero);font-size:.75rem;font-weight:800;color:var(--yellow);padding-top:3px}.article-toc a{color:var(--on-dark);text-decoration:none}.article-toc a:hover,.article-toc a:focus-visible{color:var(--yellow);text-decoration:underline}
+  .post-body .article-section{scroll-margin-top:100px;padding-top:8px}.article-section h2{display:flex;align-items:baseline;gap:14px}.article-section h2 span{color:#8a6c00;font-family:system-ui,sans-serif;font-size:.8rem;font-weight:800}
+  .article-note{margin:30px 0;padding:24px 26px;border-radius:14px;background:#fff3c4;border:1px solid #e9d780}.article-note strong{display:block;font-size:.78rem;letter-spacing:.09em;text-transform:uppercase}.post-body .article-note p{margin-top:8px}
+  .article-checklist{margin:38px 0;padding:27px;border:1px solid var(--border);border-radius:16px;background:var(--white)}.article-checklist h2{font-size:1.4rem}.article-checklist ul{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:12px}.article-checklist li{display:flex;gap:12px;line-height:1.6}.article-checklist li::before{content:"✓";flex:none;color:#806500;font-weight:800}
 </style>
 </head>
 <body>
@@ -394,12 +401,48 @@
   <article>
     <div class="post-hero"><div class="post-wrap"><p class="post-kicker">Construction website resources</p><h1>Why your construction website isn’t generating leads</h1><p class="post-intro">A quiet inbox does not point to one automatic fix. Your website might not be reaching the right visitors, visitors may not understand your services, or a technical problem may be preventing a request from reaching your team. Work through the path from first visit to follow-up.</p><p class="post-meta">By BuildSite Media · October 31, 2026</p></div></div>
     <div class="post-body"><div class="post-wrap">
-      <section><h2>The visitor cannot tell what work you do</h2><p>A general statement such as “quality construction services” does not tell someone whether you build additions, repair roofs, or handle commercial work. State your actual services, customer types, and service area clearly. Place the next step near the information a visitor needs.</p></section>
-      <section><h2>The page does not fit the buyer’s situation</h2><p>Someone with an urgent leak needs a clear way to contact a crew. A homeowner considering a remodel may want to understand the process and see relevant work first. Review each key page from that buyer’s perspective instead of sending every visitor through the same vague message.</p></section>
-      <section><h2>The form or mobile experience gets in the way</h2><p>Open the site on a phone, find the contact option, and complete a test submission using your own details. Confirm the message arrives and that your team knows who follows up. Check for difficult-to-use fields, broken links, and contact details that are out of date.</p></section>
-      <section><h2>There is not enough evidence to make contact comfortable</h2><p>Use genuine project photos, accurate service descriptions, and current qualification details where appropriate. Explain your role on each project and publish testimonials only when they are authentic and you have permission to use them.</p></section>
-      <section><h2>You are measuring traffic but not fit</h2><p>Ask new inquiries how they found you and track which become worthwhile conversations. A campaign that attracts visitors outside your service area may increase traffic without helping your business. Use the results to decide whether to improve the page, adjust advertising, or refine the work you target.</p></section>
-      <aside class="post-next"><p>Need help putting these ideas to work? Explore our <a href="/">construction company web design</a> and tell us about your business.</p><p>If paid search is part of your plan, see how we approach <a href="/google-ads-for-contractors/">Google Ads for contractors</a>.</p></aside>
+      <nav class="article-toc" aria-label="Article contents"><h2>What to know</h2><ol>
+          <li><a href="#define-lead">Decide what a useful lead looks like</a></li>
+          <li><a href="#traffic">Check whether the right people arrive</a></li>
+          <li><a href="#clarity">Make the offer understandable</a></li>
+          <li><a href="#trust">Give visitors a reason to feel confident</a></li>
+          <li><a href="#mobile">Walk through the mobile experience</a></li>
+          <li><a href="#forms">Test the inquiry from start to finish</a></li>
+          <li><a href="#follow-up">Review the handoff after the click</a></li>
+          <li><a href="#prioritize">Fix one bottleneck and review the result</a></li>
+      </ol></nav>
+      <section class="article-section" id="define-lead"><h2><span>01</span>Decide what a useful lead looks like</h2>
+        <p>Before changing the website, define the work your business wants: the right services, location, project scale, and type of customer. A form submission is not automatically a good lead if the project is outside your service area or is work your crew does not perform.</p><p>Ask the person who answers calls and reviews forms what a qualified inquiry needs to contain. Use that definition throughout the review so you can distinguish a lack of traffic from a lack of suitable conversations.</p>
+      </section>
+      <section class="article-section" id="traffic"><h2><span>02</span>Check whether the right people arrive</h2>
+        <p>Look at the information available from your site and campaigns to understand how visitors find you and which pages they enter. A sudden absence of inquiries may have a different cause from a steady stream of visits for services you do not offer.</p><p>If you use advertising, review the service and geographic focus alongside the actual inquiries. If search traffic is low, check that important pages are reachable and clearly explain the work. Traffic data alone cannot establish why a visitor did or did not contact you.</p>
+      </section>
+      <aside class="article-note"><strong>Keep in mind</strong><p>Follow the entire customer journey—from the search or ad to the form and the first response—before deciding which change matters most.</p></aside>
+      <section class="article-section" id="clarity"><h2><span>03</span>Make the offer understandable</h2>
+        <p>A headline about quality construction does not tell a visitor whether you handle an addition, an excavation project, or a commercial renovation. State the services, audience, and service area in plain language. Then give each important service enough space to answer the questions a buyer is likely to have.</p><p>A homeowner considering a bathroom renovation may want examples and a process. A general contractor seeking a framing crew may need your scope and bid contact. Put the right information near the action you want each visitor to take.</p>
+      </section>
+      <section class="article-section" id="trust"><h2><span>04</span>Give visitors a reason to feel confident</h2>
+        <p>Show real work with the customer’s permission and explain what your company actually did. Add current licensing, insurance, or other qualifications where relevant and accurate. An about page can introduce the team and the way you handle communication.</p><p>Use authentic testimonials only when they are real and you have permission to publish them. If you do not have publishable reviews, clear service descriptions and accurate project information can still help a visitor evaluate your business.</p>
+      </section>
+      <section class="article-section" id="mobile"><h2><span>05</span>Walk through the mobile experience</h2>
+        <p>Open the site on a phone as if you were a new customer. Can you read the service information, find the contact option, and use it without zooming or fighting overlapping elements? Check navigation, buttons, images, and any sticky elements on a small screen.</p><p>Pay attention to the path a customer would actually take. A prominent contact button cannot do its job if the information immediately before it leaves the visitor unsure whether you serve their project.</p>
+      </section>
+      <section class="article-section" id="forms"><h2><span>06</span>Test the inquiry from start to finish</h2>
+        <p>Send a test form using your own details and verify that the message reaches the correct inbox. Check whether required fields make sense and whether the success message accurately reflects what happened. If the form requests information your team never uses, consider simplifying it.</p><p>If buyers need to share plans and your form does not accept files, give them a working alternative. Test phone numbers and links as well, and ensure someone is responsible for monitoring the inbox and responding.</p>
+      </section>
+      <section class="article-section" id="follow-up"><h2><span>07</span>Review the handoff after the click</h2>
+        <p>A lead can be lost after the website does its part. Agree on who receives requests, how quickly the team aims to respond, and what to do if the person responsible is away. Those expectations should reflect your actual capacity and availability.</p><p>Ask whether the inquiry contained enough information to take the next step. If the same missing detail repeatedly slows down the conversation, add a clear optional question or explain what the customer should include.</p>
+      </section>
+      <section class="article-section" id="prioritize"><h2><span>08</span>Fix one bottleneck and review the result</h2>
+        <p>Start with the issue that blocks the customer most directly: a broken form or incorrect phone number should be corrected before writing a new article. If the contact path works but inquiries are consistently a poor fit, improve service-area and project-scope information.</p><p>Keep a simple record of relevant conversations and ask where customers heard about you when practical. Review changes over time, but avoid treating a single week or a raw visit count as proof that a redesign or marketing campaign succeeded.</p>
+      </section>
+      <aside class="article-checklist"><h2>A quick checklist</h2><ul>
+        <li>Describe the work and service areas your company actually wants.</li>
+        <li>Test the mobile layout, phone links, and form submission.</li>
+        <li>Confirm that real project evidence and credentials are accurate.</li>
+        <li>Assign an owner for follow-up and track whether inquiries are a fit.</li>
+      </ul></aside>
+      <aside class="post-next"><p>Need help putting these ideas to work? Explore our <a href="/">construction company web design</a> and tell us about your business.</p><p>For a closer look, explore our <a href="/google-ads-for-contractors/">Google Ads for contractors</a>.</p></aside>
     </div></div>
   </article>
   <!-- CONTACT -->

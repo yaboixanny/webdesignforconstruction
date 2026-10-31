@@ -348,6 +348,13 @@
   .post-body section+section{margin-top:34px}.post-body h2{font-size:clamp(1.45rem,2.4vw,2rem);line-height:1.2}.post-body p{margin-top:14px;font-size:1.04rem;line-height:1.8;color:var(--fg)}
   .post-body a{color:#654d00;text-decoration:underline;text-underline-offset:3px}.post-next{margin-top:42px;padding:24px;border-left:5px solid var(--yellow);background:var(--bg-alt);border-radius:0 12px 12px 0}.post-next p:first-child{margin-top:0}
   .resources{padding:70px 0;background:var(--bg-alt)}.resources h2{font-size:clamp(1.8rem,3vw,2.7rem);font-weight:500}.resources>div>p{margin-top:12px;line-height:1.6;color:var(--muted)}.resource-grid{display:grid;gap:14px;margin:26px 0 0;padding:0;list-style:none}@media(min-width:700px){.resource-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}.resource-grid a{height:100%;display:flex;flex-direction:column;gap:10px;padding:22px;border:1px solid var(--border);border-radius:15px;background:var(--white);text-decoration:none;color:var(--fg)}.resource-grid a:hover,.resource-grid a:focus-visible{border-color:var(--yellow-strong);box-shadow:var(--shadow-lift)}.resource-grid strong{font-family:'Fraunces',serif;font-size:1.1rem;line-height:1.35}.resource-grid span{margin-top:auto;color:#705600;font-size:.85rem;font-weight:700}
+  .article-toc{margin:0 0 48px;padding:26px 28px;background:var(--black);color:var(--on-dark);border-radius:18px}
+  .article-toc h2{font-size:1.2rem;color:white}.article-toc ol{list-style:none;counter-reset:toc;margin:18px 0 0;padding:0;display:grid;gap:11px}
+  @media(min-width:700px){.article-toc ol{grid-template-columns:1fr 1fr;column-gap:24px}}
+  .article-toc li{counter-increment:toc;display:flex;gap:10px;line-height:1.45}.article-toc li::before{content:counter(toc,decimal-leading-zero);font-size:.75rem;font-weight:800;color:var(--yellow);padding-top:3px}.article-toc a{color:var(--on-dark);text-decoration:none}.article-toc a:hover,.article-toc a:focus-visible{color:var(--yellow);text-decoration:underline}
+  .post-body .article-section{scroll-margin-top:100px;padding-top:8px}.article-section h2{display:flex;align-items:baseline;gap:14px}.article-section h2 span{color:#8a6c00;font-family:system-ui,sans-serif;font-size:.8rem;font-weight:800}
+  .article-note{margin:30px 0;padding:24px 26px;border-radius:14px;background:#fff3c4;border:1px solid #e9d780}.article-note strong{display:block;font-size:.78rem;letter-spacing:.09em;text-transform:uppercase}.post-body .article-note p{margin-top:8px}
+  .article-checklist{margin:38px 0;padding:27px;border:1px solid var(--border);border-radius:16px;background:var(--white)}.article-checklist h2{font-size:1.4rem}.article-checklist ul{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:12px}.article-checklist li{display:flex;gap:12px;line-height:1.6}.article-checklist li::before{content:"✓";flex:none;color:#806500;font-weight:800}
 </style>
 </head>
 <body>
@@ -394,12 +401,48 @@
   <article>
     <div class="post-hero"><div class="post-wrap"><p class="post-kicker">Construction website resources</p><h1>How to get more commercial construction leads online</h1><p class="post-intro">Commercial construction leads often begin long before someone fills out a form. An owner, architect, developer, or procurement team may first check whether your firm handles the right project type, geography, and delivery scope. Your online presence should help them answer those questions quickly.</p><p class="post-meta">By BuildSite Media · October 31, 2026</p></div></div>
     <div class="post-body"><div class="post-wrap">
-      <section><h2>Define the projects you want to win</h2><p>Identify the building types, project sizes, regions, and delivery roles that suit your team. An office tenant improvement and a ground-up industrial project need different proof. Use that focus to shape your website and outreach instead of treating every search or bid invitation as equally valuable.</p></section>
-      <section><h2>Build a useful capabilities page</h2><p>Describe the work your firm actually performs, the clients it serves, and how project teams can begin a conversation. Include current licensing, bonding, insurance, or safety information where relevant and substantiated. Keep the details accurate and make it easy to find the appropriate bid contact.</p></section>
-      <section><h2>Present completed projects with context</h2><p>With permission, show real projects and explain the building type, your company’s role, and the scope delivered. A procurement team gains more from a concise description of relevant experience than from an unlabeled image gallery. Respect client confidentiality and do not imply that a partner’s work was yours.</p></section>
-      <section><h2>Match the contact path to a bid invitation</h2><p>A commercial buyer may have a project location, schedule, procurement stage, and plans ready to discuss. Give them a simple way to share that context. If your form cannot accept attachments, direct them to the appropriate existing email or document-sharing process rather than promising an upload.</p></section>
-      <section><h2>Measure the conversations, not just visits</h2><p>Record which inquiries turn into qualified opportunities and which project types are a poor fit. Ask your team where the lead came from and whether the site answered the buyer’s questions. Use that feedback to improve capabilities pages and consider advertising only where the targeting and budget match your priorities.</p></section>
-      <aside class="post-next"><p>Need help putting these ideas to work? Explore our <a href="/">construction company website design</a> and tell us about your business.</p><p>For more on presenting commercial capabilities online, explore our <a href="/commercial-construction-firms/">website design for commercial construction firms</a>.</p></aside>
+      <nav class="article-toc" aria-label="Article contents"><h2>What to know</h2><ol>
+          <li><a href="#ideal-project">Define the opportunities you want</a></li>
+          <li><a href="#buyers">Understand who participates in the decision</a></li>
+          <li><a href="#capabilities">Create a useful capabilities page</a></li>
+          <li><a href="#projects">Show relevant work with context</a></li>
+          <li><a href="#discovery">Give searchers a relevant destination</a></li>
+          <li><a href="#paid">Consider paid search against capacity</a></li>
+          <li><a href="#bid-contact">Make bid invitations easy to start</a></li>
+          <li><a href="#measure">Track fit from inquiry to opportunity</a></li>
+      </ol></nav>
+      <section class="article-section" id="ideal-project"><h2><span>01</span>Define the opportunities you want</h2>
+        <p>Start by identifying the building types, project sizes, service area, and delivery roles that fit your company. A contractor focused on occupied office renovations will need a different message from a firm pursuing ground-up industrial work. Decide which opportunities your team has the capacity and experience to pursue before selecting channels or writing a capabilities page.</p><p>Talk to estimators and project managers about which inquiries are worth a conversation. Their answers can reveal practical filters, such as location, procurement stage, site access, or the minimum scope your team accepts.</p>
+      </section>
+      <section class="article-section" id="buyers"><h2><span>02</span>Understand who participates in the decision</h2>
+        <p>A commercial project may involve an owner, developer, architect, construction manager, and procurement team. Each person may visit your site with a different question. An owner may want to understand project types; a general contractor may be looking for trade capabilities and an appropriate person to invite to bid.</p><p>Make the information easy to scan without assuming every visitor is ready to contact you. Clear headings, relevant project examples, and a short explanation of your role help a buyer decide whether your firm belongs on the shortlist.</p>
+      </section>
+      <aside class="article-note"><strong>Keep in mind</strong><p>Commercial buyers often check project fit before contacting you. Put capabilities, proof, and the bid contact where they can find them without requesting a brochure.</p></aside>
+      <section class="article-section" id="capabilities"><h2><span>03</span>Create a useful capabilities page</h2>
+        <p>Describe the work your firm actually performs, the sectors it serves, and how it participates in a project. Separate major offerings when the scope differs, such as tenant improvements, renovations, and new commercial construction. Include geographic coverage and the kind of procurement conversations you welcome.</p><p>Where appropriate, present current licensing, insurance, bonding, and safety information that your company can substantiate. Keep the details current and make the next step obvious rather than burying a bid contact in a long document.</p>
+      </section>
+      <section class="article-section" id="projects"><h2><span>04</span>Show relevant work with context</h2>
+        <p>With permission, feature real projects and explain the building type, your firm’s role, the work completed, and any relevant constraints. A small number of well-described examples can help a buyer assess fit more quickly than a long gallery without captions.</p><p>Do not imply that work performed by another company was yours. If a project is confidential, ask what can be shared or describe approved details without identifying the client. Keep photographs and figures accurate and up to date.</p>
+      </section>
+      <section class="article-section" id="discovery"><h2><span>05</span>Give searchers a relevant destination</h2>
+        <p>Organize your site around the services and project types people need to find. A prospect looking for tenant improvements should be able to reach a page about that service, not just a generic list of everything the company does. Use plain, descriptive titles and connect relevant pages with useful links.</p><p>Search visibility takes time and rankings are not guaranteed. Concentrate first on accurate information, accessible pages, and content that answers the questions your buyers have before considering more pages for additional locations.</p>
+      </section>
+      <section class="article-section" id="paid"><h2><span>06</span>Consider paid search against capacity</h2>
+        <p>Paid search can be useful when a campaign is aligned with a specific service, market, and landing page. Before spending, decide what makes an inquiry relevant and who will respond. Advertising spend is separate from management fees, and results vary by market and competition.</p><p>Review the actual inquiries, not only clicks. A form full of residential repair requests may signal that the message or targeting needs attention if your business is focused on commercial projects.</p>
+      </section>
+      <section class="article-section" id="bid-contact"><h2><span>07</span>Make bid invitations easy to start</h2>
+        <p>A project team may want to share its location, building type, schedule, and procurement stage. Ask for the details that help your team route the request, and identify the appropriate contact or process for invitations to bid. Keep the form concise enough that it is usable on a phone.</p><p>If the form does not accept plans, direct buyers to an existing email or document-sharing process. Confirm that messages reach the right inbox and that someone is responsible for follow-up.</p>
+      </section>
+      <section class="article-section" id="measure"><h2><span>08</span>Track fit from inquiry to opportunity</h2>
+        <p>Record the source of an inquiry when it is available, then note whether the project matched your services, geography, and capacity. A smaller number of suitable conversations can be more valuable than a large count of visits or form submissions with no relationship to the work you pursue.</p><p>Review patterns with your estimating team. If buyers repeatedly ask for information missing from the site, add it to the relevant page. If inquiries are a poor fit, revisit the language, contact questions, or advertising scope.</p>
+      </section>
+      <aside class="article-checklist"><h2>A quick checklist</h2><ul>
+        <li>Identify target project types, regions, and your firm’s actual role.</li>
+        <li>Publish current, substantiated qualifications and approved project examples.</li>
+        <li>Test the bid inquiry route and clarify how plans should be shared.</li>
+        <li>Review inquiry quality with the people who price and deliver the work.</li>
+      </ul></aside>
+      <aside class="post-next"><p>Need help putting these ideas to work? Explore our <a href="/">construction company website design</a> and tell us about your business.</p><p>For a closer look, explore our <a href="/commercial-construction-firms/">website design for commercial construction firms</a>.</p></aside>
     </div></div>
   </article>
   <!-- CONTACT -->
